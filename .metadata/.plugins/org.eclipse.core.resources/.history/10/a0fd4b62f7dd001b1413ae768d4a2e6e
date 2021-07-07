@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Detalle Cartel</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	<br>
+	<div class="container">
+	<div class="card bg-light">
+	<div class="card-header bg-warning text-center"  >
+		<h3 th:text="${titulo}"></h3>
+	</div>
+	<div class="card-body">
+		<div   class="text-center">
+	<img class="img-thumbnail rounded"
+		th:src="@{'/recursos/' + ${cartelpublicitario.image}}"
+		th:alt="${cartelpublicitario.image}"
+		style= "max-width:35%;">
+		</div>
+		<br>
+		<ul class="list-group"  >
+			<h6 class="card-subtitle mb-2 text-muted">Contacto</h6>
+		<li class="list-group-item" th:text="'NOMBRE 		:		' +${cartelpublicitario.nombre}"> </li>
+		<li class="list-group-item" th:text="'APELLIDO		:		' +${cartelpublicitario.apellido}"></li>
+		<li class="list-group-item" th:text="'TELEFONO		:		' +${cartelpublicitario.nrocontacto}"></li>
+		<li class="list-group-item" th:text="'CORREO		:		' +${cartelpublicitario.correo}"></li>
+		
+		<br>
+		<h6 class="card-subtitle mb-2 text-muted">Ubicacion</h6>
+		<li class="list-group-item" th:text="'DIRECCION		:		' +${cartelpublicitario.direccion}"></li>
+		<li class="list-group-item" th:text="'REGION		:		' +${cartelpublicitario.region}"></li>
+		<li class="list-group-item" th:text="'COMUNA		:		' +${cartelpublicitario.comuna}"></li>
+		
+		
+		</ul>
+	</div>
+
+	<div class="card">
+	<div class="card-body ">
+		<h6 class="card-subtitle mb-2 text-muted">DETALLE</h6>
+		<p class="card-text" th:text="'PRECIO DE CARTEL:$        '+${cartelpublicitario.precio}"></p>
+
+		<p class="card-text" th:text="${cartelpublicitario.detalle}"></p>
+	</div>
+
+	</div>
+	</div>
+	<br>
+
+</div>	
+
+</body>
+</html>

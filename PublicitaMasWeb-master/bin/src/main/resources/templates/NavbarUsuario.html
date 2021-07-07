@@ -1,0 +1,43 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Publicita+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="inicio.html">Inicio</a>
+        <a class="nav-link" href="/lista">Campanias Publicitarias</a>
+		  <a class="nav-link" href="/listacartel">Carteles Publicitarios</a>
+
+        <div>
+        <a th:href="@{/new}" class="btn btn-sm btn-primary ">Publicar Campania</a> -
+        <a th:href="@{/agregarCartel}" class="btn btn-sm btn-light">Publicar Cartel</a> 
+        </div> -- 
+
+           <div>
+        <a th:href="@{/new}" class="btn btn-sm btn-primary ">Mis Campanias</a> -
+        <a th:href="@{/agregarCartel}" class="btn btn-sm btn-light">Mis Carteles</a>
+        </div>
+
+        <div>
+              <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Usuario
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Mis Datos</a></li>
+            <li><a class="dropdown-item" href="#">Redes Sociales</a></li>
+            <li><a class="dropdown-item" href="#">Mis Potulaciones</a></li>
+          </ul>
+        </li>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>

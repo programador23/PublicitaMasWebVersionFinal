@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Bienvenido a Publicita+</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Publicita+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="inicio.html">Inicio</a>
+        <a class="nav-link" href="/lista">Campanias Publicitarias</a>
+		  <a class="nav-link" href="/listacartel">Carteles Publicitarios</a>
+
+        <div>
+        <a th:href="@{/new}" class="btn btn-sm btn-primary ">Publicar Campania</a> -
+        <a th:href="@{/agregarCartel}" class="btn btn-sm btn-light">Publicar Cartel</a> 
+        </div> -- 
+
+           <div>
+        <a th:href="@{/new}" class="btn btn-sm btn-primary ">Mis Campanias</a> -
+        <a th:href="@{/agregarCartel}" class="btn btn-sm btn-light">Mis Carteles</a>
+        </div>
+
+        <div>
+              <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Usuario
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Mis Datos</a></li>
+            <li><a class="dropdown-item" href="#">Redes Sociales</a></li>
+            <li><a class="dropdown-item" href="#">Mis Potulaciones</a></li>
+          </ul>
+        </li>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
+<body>
+	<br>
+<div class="card" >
+  <div class="card-header">
+    Empresa Publicita+
+  </div>
+  <div class="card-body">
+	<h5 class="card-title text-center">Consigue Nuevos Clientes</h5>
+	<div class="card-header center-block"  >
+	<img src="https://cdn.pixabay.com/photo/2017/04/07/09/45/social-media-2210580_1280.png" class="img-fluid" alt="error en la imagen" width="30%" center-block>
+	</div>
+	<p class="card-text">Las redes sociales ya son parte de nuestro Mundo Y estan Para Quedarse.</p>
+	<p class="card-text">Los usuarios de Internet de todo el mundo pasan un promedio de 2 horas y 25 minutos al dia conectados a las plataformas sociales.</p>
+	
+		<p class="card-text">Todo el Mundo Conoce que en estas plataformas Esta integrada la publicidad y es parte de nosotros como usuarios.
+				Nosotros llevamos a otro nivel de publicidad y crear alianzas entre los llamados influencer y entre una marca u empresas.
+		</p>
+	
+	
+    <a href="#" class="btn btn-warning">Conoce mas de Nosotros</a>
+  </div>
+</div>
+
+</body>
+ 
+</html>

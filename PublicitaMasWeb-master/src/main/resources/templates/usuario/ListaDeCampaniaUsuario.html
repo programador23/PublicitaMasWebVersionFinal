@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+
+</head>
+<body>
+				<form th:action="@{/idusuario/}" th:object="${campaniapublicitaria}" method="get">
+		<input type="text" th:field="*{idusuario}" class="from-control col-md-4" />
+		<button type="submit" class="btn btn-warning">Buscar</button>
+		</form>
+		
+	<div class="container mt-4">
+		<a th:href="@{/new}" class="btn btn-primary">Nuevo</a>
+
+
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>IDUSUARIO</th>
+					<th>NOMBRE</th>
+					<th>AREA</th>
+					<th>VALOR</th>
+					<th>DURACION</th>
+					<th>DETALLE</th>
+					<th>IMAGE</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="campaniapublicitaria:${PublicidadPorUsuario}">
+					<td th:text="${campaniapublicitaria.id}"></td>
+					<td th:text="${campaniapublicitaria.idusuario}"></td>
+					<td th:text="${campaniapublicitaria.nombre}"></td>
+					<td th:text="${campaniapublicitaria.area}"></td>
+					<td th:text="${campaniapublicitaria.valor}"></td>
+					<td th:text="${campaniapublicitaria.duracion}"></td>
+					<td th:text="${campaniapublicitaria.detalle}"></td>
+					<td th:text="${campaniapublicitaria.image}"></td>
+					<td>
+				<a th:href="@{/modificarcampania/}+${campaniapublicitaria.id}"Class="btn btn-warning">Modificar</a>
+				<a th:href="@{/eliminarcampania/}+${campaniapublicitaria.id}"Class="btn btn-warning">Eliminar</a>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista de campanias</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+
+<div class="container mt-4">
+ <td th:each="campaniapublicitaria:${campaniapublicitaria}">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+  <img th:src="@{'/images/' + ${campaniapublicitaria.image}}" class="card-img-top" alt="">
+    <h5 class="card-title" th:text="${campaniapublicitaria.nombre} ">Card title</h5>
+    Duracion de la campania<p class="card-text" th:text="${campaniapublicitaria.duracion}"></p>
+    Pago<p class="card-text" th:text="${campaniapublicitaria.valor}"></p>
+    <a th:href="@{detalle/}+${campaniapublicitaria.id}" class="btn btn-warning">Ver Publicacion</a>
+  </div>
+
+</div>
+<br>
+</td>
+</div>
+			
+	
+	
+	
+	
+
+</body>
+</html>
