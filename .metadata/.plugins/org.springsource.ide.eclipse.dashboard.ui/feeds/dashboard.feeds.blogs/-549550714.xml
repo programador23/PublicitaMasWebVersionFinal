@@ -5,7 +5,155 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-07-07T07:00:00Z</updated>
+  <updated>2021-07-08T07:00:00Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Matt Raible</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/07/08/a-bootiful-podcast-matt-raible" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-07-08:4491</id>
+    <updated>2021-07-08T07:00:00Z</updated>
+    <content type="html">&lt;p&gt;It&amp;rsquo;s Matt Raible! I love talking to Matt Raible, and I&amp;rsquo;ll bet you would too. He&amp;rsquo;s one of the good ones, people. One of the legends of the Java and JavaScript communities. One of the greats. Enjoy!&lt;/p&gt;
+&lt;iframe title="MATT RAIBLE!!" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=jtybk-1082d8b-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;btn-skin=7"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Hoxton.SR12 has been released</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/07/07/spring-cloud-hoxton-sr12-has-been-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Olga Maciaszek-Sharma</name>
+    </author>
+    <id>tag:spring.io,2021-07-07:4490</id>
+    <updated>2021-07-07T16:35:47Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Service Release 12 (SR12) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Hoxton&lt;/a&gt; Release Train is available today. The release can be found in &lt;a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Hoxton.SR12/"&gt;Maven Central&lt;/a&gt;. You can check out the Hoxton &lt;a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-Hoxton-Release-Notes"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-hoxton-release-train" class="anchor" name="notable-changes-in-the-hoxton-release-train"&gt;&lt;/a&gt;Notable Changes in the Hoxton Release Train&lt;/h2&gt;
+&lt;p&gt;See all issues included in this release &lt;a href="https://github.com/orgs/spring-cloud/projects/62"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This was primarily a bug fix and documentation release. Hoxton.SR12 is compatible with Spring Boot 2.3.x and 2.2.x.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: This will be the last regularly scheduled release of the Hoxton Release Train. It now enters a special maintenance period for security fixes and critical bugs until the end of Feb 2022 (which follows the lifecycle of &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Supported-Versions#released-versions"&gt;Spring Boot 2.3.x&lt;/a&gt;). See &lt;a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases"&gt;the wiki&lt;/a&gt; for more information.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Added &lt;code&gt;TaskSchedulerWrapper&lt;/code&gt; (&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/pull/974"&gt;#974&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gateway" class="anchor" name="spring-cloud-gateway"&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Enabled disabling &lt;code&gt;GatewayRedisAutoConfiguration&lt;/code&gt; (&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/2052"&gt;#2052&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Made the scheme of the URI for the route should be case-insensitive (&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/2207"&gt;#2207&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-openfeign" class="anchor" name="spring-cloud-openfeign"&gt;&lt;/a&gt;Spring Cloud OpenFeign&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Improved support for &lt;code&gt;SpringFormEncoder&lt;/code&gt; (&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/issues/549"&gt;#549&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-netflix" class="anchor" name="spring-cloud-netflix"&gt;&lt;/a&gt;Spring Cloud Netflix&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Special characters support added for &lt;code&gt;TraceProxyRequestHelper&lt;/code&gt; (&lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/issues/3873"&gt;#3873&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Fixed propagating status to registry when &lt;code&gt;eureka.client.healthcheck.enabled= true&lt;/code&gt; (&lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/issues/1571"&gt;#1571&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-circuitbreaker" class="anchor" name="spring-cloud-circuitbreaker"&gt;&lt;/a&gt;Spring Cloud CircuitBreaker&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Reactive Resilience4J CircuitBreakers can now be configured via configuration properties (&lt;a href="https://github.com/spring-cloud/spring-cloud-circuitbreaker/issues/107"&gt;#107&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following modules were updated as part of Hoxton.SR12:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Module &lt;/th&gt;
+      &lt;th&gt;Version &lt;/th&gt;
+      &lt;th&gt;Issues&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Starter Build &lt;/td&gt;
+      &lt;td&gt;Hoxton.SR12 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
+      &lt;td&gt;2.2.9.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/milestone/103?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Openfeign &lt;/td&gt;
+      &lt;td&gt;2.2.9.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/milestone/37?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Gateway &lt;/td&gt;
+      &lt;td&gt;2.2.9.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/52?closed=1"&gt;issues&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
+      &lt;td&gt;2.2.9.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/91?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
+      &lt;td&gt;2.2.8.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
+      &lt;td&gt;1.1.10.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-kubernetes/milestone/32?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud CircuitBreaker &lt;/td&gt;
+      &lt;td&gt;1.0.6.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-circuitbreaker/milestone/10?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Stream &lt;/td&gt;
+      &lt;td&gt;Horsham.SR13 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
+    &amp;lt;dependencies&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;version&amp;gt;Hoxton.SR12&amp;lt;/version&amp;gt;&#xD;
+            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
+            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;/dependencies&amp;gt;&#xD;
+&amp;lt;/dependencyManagement&amp;gt;&#xD;
+&amp;lt;dependencies&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    ...&#xD;
+&amp;lt;/dependencies&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or with Gradle:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint groovy"&gt;buildscript {&#xD;
+  dependencies {&#xD;
+    classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE&amp;quot;&#xD;
+  }&#xD;
+}&#xD;
+&#xD;
+apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
+&#xD;
+dependencyManagement {&#xD;
+  imports {&#xD;
+    mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR12&amp;#39;&#xD;
+  }&#xD;
+}&#xD;
+&#xD;
+dependencies {&#xD;
+  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
+  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
+  //...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: Spring Cloud Square</title>
     <link rel="alternate" href="https://spring.io/blog/2021/07/07/spring-tips-spring-cloud-square" />
@@ -469,45 +617,6 @@ Artem&lt;/p&gt;
 &lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2021-06-18-4110-release-incl-language-servers-version-1260"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2021-06-18-4110-release-incl-language-servers-version-1260&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Spring Tools 4.11.1 is scheduled to be released in early August 2021.&lt;/p&gt;
 &lt;p&gt;Enjoy!&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Azure Developer Advocate Rory Preddy on Spring, Java, Azure Spring Cloud and more</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/06/17/a-bootiful-podcast-azure-developer-advocate-rory-preddy-on-spring-java-azure-spring-cloud-and-more" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-06-17:4471</id>
-    <updated>2021-06-17T11:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of a Bootiful Podcast! In this installment, Josh Long (@starbuxman) talks to Azure Developer Advocate Rory Preddy (@rorypreddy).&lt;/p&gt;
-&lt;iframe title="Azure Developer Advocate Rory Preddy on Spring, Java, and Azure Spring Cloud" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=6rfn3-10692c4-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;btn-skin=7"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - June 15th, 2021</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/06/16/this-week-in-spring-june-15th-2021" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-06-16:4469</id>
-    <updated>2021-06-16T10:18:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! How&amp;rsquo;re you doing? I&amp;rsquo;m silly stoked! This week saw the release of Spring Native 0.10.0 and it is &lt;em&gt;awesome&lt;/em&gt;! You absolutely have to check this release out. I put together an &lt;a href="https://www.youtube.com/watch?v=JsUAGJqdvaA"&gt;episode of Spring Tips&lt;/a&gt;, the most comprehensive of its kind, introducing (almost) everything you&amp;rsquo;ll need to know about Spring Native and Spring Native 0.10.0 in particular. Start here. Spring Native is awesome and this is the comprehensive introduction I wish I&amp;rsquo;d had at the start. &lt;/p&gt;
-&lt;p&gt;The next time we meet in this humble column, next week, will be June 22nd, and by then we&amp;rsquo;ll have passed summer solstice - the longest day in the year! - and the beginning of summer. Farewell (for now) to Spring, the season, and long live Spring, the easiest and most productive path to production for your applications. &lt;/p&gt;
-&lt;p&gt;Anyway, my friends, we&amp;rsquo;ve got a ton of things to look at this week, starting of course with that Spring Native video and release announcement, of course, so let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;In this week&amp;rsquo;s installment of Spring Tips, I look at &lt;a href="https://spring.io/blog/2021/06/14/spring-native-0-10-0-available-now"&gt;Spring Native 0.10.0, available now&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/10/a-bootiful-podcast-redgate-technical-lead-for-the-flyway-team-mikiel-agutu-on-database-migrations-and-continuous-delivery"&gt;A Bootiful Podcast: Redgate technical lead for the Flyway team Mikiel Agutu on database migrations and continuous delivery&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/yanashin18618/status/1404198914643750917?s=12"&gt;An updated Spring Cloud GCP&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2021/06/imagine-that-register-for-vmworld-2021-now.html"&gt;Register for VMworld 2021 Now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;And while you&amp;rsquo;re at it, register for &lt;a href="https://springone.io"&gt;SpringOne&lt;/a&gt;, too!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/10/spring-boot-2-3-12-release-available-now"&gt;Spring Boot 2.3.12.RELEASE available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/10/spring-boot-2-4-7-available-now"&gt;Spring Boot 2.4.7 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/10/spring-boot-2-5-1-is-now-available"&gt;Spring Boot 2.5.1 is now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/09/spring-framework-5-3-8-available-now"&gt;Spring Framework 5.3.8 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/VMware/status/1403028076716494864"&gt;Do you need help making sense of Kubernetes? Here&amp;rsquo;s your chance to ask Kubernetes co-creator Joe Beda anything during this live event&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

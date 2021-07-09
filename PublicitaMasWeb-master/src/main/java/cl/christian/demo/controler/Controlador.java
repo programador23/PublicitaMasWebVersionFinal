@@ -418,6 +418,8 @@ public class Controlador {
 		return"carteles/DetalleCartel";
 	}
 	
+	
+	
 	@GetMapping("/index")
 	//llama de inicio 
 	public String incio(Model model) {
