@@ -12,6 +12,12 @@
 
 <body>
 
+<br>
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+<a href="javascript:history.back()" class="btn btn-outline-warning" aria-current="page">Volver Atras</a>
+</div>
+<br>
+
 	<script src="carteles/RegionesYComunas.js"></script>
 	<div class="container mt-4">
 		<div class="col-sm-6">
@@ -55,35 +61,22 @@
 						</div>
 						<div class="form-group">
 							<label>NUMERO DE CONTACTO</label> <input th:field="*{nrocontacto}" type="number"
-								maxlength="9" class="form-control" required="required" />
+								 class="form-control" required="required" min="9" />
 						</div>
 
 						<div class="form-group">
+						
 							<label>Regiones</label>
-							<select id="*{region}" name="region" class="form-select">
-								<option value="Tarapaca">Tarapaca</option>
-								<option value="Antofagasta">Antofagasta</option>
-								<option value="Atacama">Atacama</option>
-								<option value="Coquimbo">Coquimbo</option>
-								<option value="Valparaiso">Valparaiso</option>
-								<option value="O'Higgins">O'Higgins</option>
-								<option value="Maule">Maule</option>
-								<option value="Bio - Bio">Bio - Bio</option>
-								<option value="Araucania">Araucania</option>
-								<option value="Los Lagos">Los Lagos</option>
-								<option value="Aisen">Aisen</option>
-								<option value="Magallanes Y Antartica">Magallanes Y Antartica</option>
-								<option value="Metropolitana">Metropolitana</option>
-								<option value="Los Rios">Los Rios</option>
-								<option value="Arica y Parinacota">Arica y Parinacota</option>
+						<select id="regiones"  th:field="*{region}" name=region class="form-select" required="required"></select>
+						</div>
 
-							</select>
+
 								<div class="form-group">
-							<label>Comuna</label> <input th:field="*{comuna}" type="text" class="form-control"
-								required="required" />
+							<label>Comuna</label> 
+							<select id="comunas"  th:field="*{comuna}" name=comuna class="form-select" required="required"></select>
 						</div>
 
-						</div>
+					
 
 							<div class="form-group">
 							<label>PRECIO</label> <input th:field="*{precio}" type="number" class="form-control"
@@ -118,6 +111,9 @@
 
 		</div>
 	</div>
+	
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="regionesycomunas.js"></script>
 </body>
 
 </html>

@@ -10,6 +10,12 @@
 	crossorigin="anonymous">
 
 </head>
+<br>
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+<a href="javascript:history.back()" class="btn btn-outline-warning" aria-current="page">Volver Atras</a>
+</div>
+<br>
+
 <body>
 	<br>
 	<div class="container">
@@ -20,9 +26,9 @@
 	<div class="card-body">
 		<div   class="text-center">
 	<img class="img-thumbnail rounded"
-		th:src="@{'/images/' + ${cartelpublicitario.image}}"
+		th:src="@{'/recursos/' + ${cartelpublicitario.image}}"
 		th:alt="${cartelpublicitario.image}"
-		style= "max-width:25%;">
+		style= "max-width:35%;">
 		</div>
 		<br>
 		<ul class="list-group"  >
@@ -52,8 +58,9 @@
 
 	</div>
 	</div>
-	<br>
 
+		<br>
+	<a Class="btn btn-warning">Postular</a>
 </div>	
 
 </body>

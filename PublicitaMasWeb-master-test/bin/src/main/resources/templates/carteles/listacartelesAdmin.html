@@ -20,7 +20,7 @@
 				<div class="navbar-nav">
 					<a class="nav-link active" aria-current="page" href="/inicioAdmin">Inicio</a>
 					<a class="nav-link" href="/listar">Campanias Publicitarias</a>
-					<a class="nav-link" href="/listacartel">Carteles Publicitarios</a>
+					<a class="nav-link" href="/listacartelesAdmin">Carteles Publicitarios</a>
 
 
 
@@ -32,6 +32,10 @@
 
 <body>
 	<div class="container mt-4">
+	<div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
+     th:text="${mensaje}"
+     class="alert">
+</div>
 		<a th:href="@{/nuevocartel}" class="btn btn-primary">Nuevo</a>
 
 		<table class="table">
@@ -49,7 +53,7 @@
 					<th>NOMBRE</th>
 					<th>APELLIDO</th>
 					<th>PRECIO</th>
-					<th>DETALLE</th>
+					
 				</tr>
 			</thead>
 			<tbody>
@@ -73,19 +77,21 @@
 					<td th:text="${cartelpublicitarios.nombre}"></td>
 					<td th:text="${cartelpublicitarios.apellido}"></td>
 					<td th:text="${cartelpublicitarios.precio}"></td>
-					<td th:text="${cartelpublicitarios.detalle}"></td>
+					
 
 					<td>
 						<a th:href="@{/modificarcartel/}+${cartelpublicitarios.id}"
 							Class="btn btn-warning">Modificar</a>
-						<a th:href="@{/eliminarcartel/}+${cartelpublicitarios.id}"
-							Class="btn btn-warning">Eliminar</a>
+							<a th:onclick="eliminarcartel([[${cartelpublicitarios.id}]])"Class="btn btn-warning">Eliminar</a>
+				
 							<a th:href="@{detallecartel/}+${cartelpublicitarios.id}"Class="btn btn-warning">VerDetalle</a>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="funciones.js"></script>
 </body>
 
 </html>

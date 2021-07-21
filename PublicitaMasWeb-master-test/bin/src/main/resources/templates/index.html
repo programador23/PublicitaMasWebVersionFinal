@@ -33,8 +33,15 @@
 </nav>
 </header>
 
+
+
 <body>
+
 	<div class="container mt-4">
+	<div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
+     th:text="${mensaje}"
+     class="alert">
+</div>
 		<a th:href="@{/new}" class="btn btn-primary">Nuevo</a>
 				
 		<table class="table">
@@ -53,13 +60,7 @@
 			<tbody>
 				<tr th:each="campaniapublicitaria:${campaniapublicitaria}">
 
-					<th>
-						<a class="btn btn-info btn-xs"
-							th:href="@{detalle/}+${campaniapublicitaria.id}"
-							th:text="${campaniapublicitaria.id}">
-						</a>
-					</th>
-					
+					<td th:text="${campaniapublicitaria.id}"></td>
 					<td th:text="${campaniapublicitaria.idusuario}"></td>
 					<td th:text="${campaniapublicitaria.nombre}"></td>
 					<td th:text="${campaniapublicitaria.area}"></td>
@@ -69,11 +70,19 @@
 					<td th:text="${campaniapublicitaria.image}"></td>
 					<td>
 				<a th:href="@{/modificarcampania/}+${campaniapublicitaria.id}"Class="btn btn-warning">Modificar</a>
-				<a th:href="@{/eliminarcampania/}+${campaniapublicitaria.id}"Class="btn btn-warning">Eliminar</a>
+				<br>
+				<a th:onclick="eliminarcampania([[${campaniapublicitaria.id}]])"Class="btn btn-warning">Eliminar</a>
+				<a th:href="@{detalle/}+${campaniapublicitaria.id}"Class="btn btn-warning">Ver Detalle</a>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 
+
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="funciones.js"></script>
 </body>
 </html>

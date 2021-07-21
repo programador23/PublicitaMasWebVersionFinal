@@ -12,6 +12,11 @@
 </head>
 <body>
 
+<br>
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+<a href="javascript:history.back()" class="btn btn-outline-warning" aria-current="page">Volver Atras</a>
+</div>
+<br>
 
 	<div class="container mt-4">
 		<div class="col-sm-6">
@@ -64,7 +69,7 @@
 
 					</div>
 					<div class="d-grid gap-2 btn-block">
-						<input type="submit" value="Guardar" class="btn btn-warning">
+						<input type="submit" th:onclick="guardar" value="Guardar" class="btn btn-warning">
 
 					</div>
 				</div>
@@ -72,5 +77,8 @@
 
 		</div>
 	</div>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="funciones.js"></script>
 </body>
 </html>

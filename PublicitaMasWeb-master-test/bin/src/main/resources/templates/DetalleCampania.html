@@ -11,6 +11,13 @@
 
 </head>
 <body>
+
+<br>
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+<a href="javascript:history.back()" class="btn btn-outline-warning" aria-current="page">Volver Atras</a>
+</div>
+<br>
+
 	<br>
 	<div class="container">
 	<div class="card bg-light">
@@ -20,7 +27,7 @@
 	<div class="card-body">
 		<div   class="text-center">
 	<img class="img-thumbnail rounded"
-		th:src="@{'/images/' + ${campaniapublicitaria.image}}"
+		th:src="@{'/recursos/' + ${campaniapublicitaria.image}}"
 		th:alt="${campaniapublicitaria.image}"
 		style= "max-width:25%;">
 		</div>
@@ -44,8 +51,11 @@
 	</div>
 	</div>
 		<br>
-	<a th:href="@{/postularcampania/}+${campaniapublicitaria.id}"Class="btn btn-warning">Postular</a>
+	<a th:href="@{/postularcampania/}+${campaniapublicitaria.id}"Class="btn btn-warning" >Postular</a>
 </div>	
+
+
+
 
 </body>
 </html>
