@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.jar.Attributes;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -68,6 +69,7 @@ public class Controlador {
 	 * muestra la vista formulario agregar campaña
 	 * cuando lo llamn por "/new"
 	 */
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("/new")
 	public String agregarcampania(Model model) {
 		model.addAttribute("campaniapublicitaria", new CampaniaPublicitaria());
@@ -84,6 +86,7 @@ public class Controlador {
 	 * @param attributes
 	 * @return
 	 */
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@PostMapping("/savecampania")
 	public String savecampania(@Validated CampaniaPublicitaria c, Model model, @RequestParam("file") MultipartFile image, RedirectAttributes attributes, RedirectAttributes redirectAttrs) {
 		
@@ -121,6 +124,7 @@ public class Controlador {
 	 * y luego manda los datos para cargalos
 	 * para luego poder modificarlo llamando a la clase save de campaña
 	 */
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("modificarcampania/{id}")
 	public String editar(@PathVariable("id") int id,Model model, RedirectAttributes redirectAttrs) {
 		
@@ -145,6 +149,7 @@ public class Controlador {
 	 * Luego de encontrarlo lo manda a una vista que detalla la campaña y sus datos
 	 * 
 	 */
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("detalle/{id}")
 	public String detalleCampania(@PathVariable("id") int id,Model model,RedirectAttributes attribute) {
 		
@@ -169,7 +174,7 @@ public class Controlador {
 	}
 	
 	
-	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("/nombre/detalle/{id}")
 	public String detalleCampaniaNombre(@PathVariable("id") int id,Model model,RedirectAttributes attribute) {
 		
@@ -197,7 +202,7 @@ public class Controlador {
 	
 	
 	
-
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("/listausuario")
 	public String listaCampaniasUsuarios(Model model) {
 
@@ -206,7 +211,7 @@ public class Controlador {
 		return "usuario/ListaDeCampaniaUsuario";
 		
 	}
-	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("/listanombre")
 	public String listaCampaniasNombre(Model model) {
 
@@ -215,7 +220,7 @@ public class Controlador {
 		return "ListaDeCampaniaNombre";
 		
 	}
-	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("/nombre/")
 	public String BuscarPorNombre(@RequestParam String nombre,Model model,@ModelAttribute("campaniapublicitaria") CampaniaPublicitaria campaniaPublicitaria) {
 		
@@ -233,12 +238,27 @@ public class Controlador {
 	 * Buscar en toda la lista el idusuario que sea igual al indicado
 	 * para luego agregarlos a una lista, para mostrarlos en una vista
 	 */
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("/idusuario/")
 	public String BuscarPorIdusuario(@RequestParam String idusuario,Model model,@ModelAttribute("campaniapublicitaria") CampaniaPublicitaria campaniaPublicitaria ) {
 
 		model.addAttribute("PublicidadPorUsuario", service.BuscarPordusuario(idusuario));
 		return "usuario/ListaDeCampaniaUsuario";
 	}
+	
+	
+	/*lista por idusuario de carteles ingresados*/
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/cartelidusuario/")
+	public String listarcarteles_usuarios(@RequestParam String idusuario,Model model,@ModelAttribute("cartelpublicitario") CartelPublicitario cartelPublicitario) {
+		
+		 
+		
+		model.addAttribute("CartelPorUsuario", servicecartel.buscarPorIdusuario(idusuario));
+
+		return "carteles/ListaDeCartelesUsuario";
+	}
+	
 	
 	
 	@GetMapping("/inicioAdmin")
@@ -295,6 +315,7 @@ public class Controlador {
 	 * y la muestra.
 	 * ademas le entrega a la vista un texto"Agregar Cartel Publicitario" y un tipo Ojebto CartelPublicitario para luego Usarlo
 	 */
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("/nuevocartel")
 	public String nuevocartel(Model model) {
 		model.addAttribute("titulo","Agregar Cartel Publicitario");
@@ -308,6 +329,7 @@ public class Controlador {
 	 *
 	 * @return
 	 */
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@PostMapping("/savecartel")
 	public String savecartel(@Validated CartelPublicitario c, Model model, @RequestParam("file") MultipartFile image, @RequestParam("document") MultipartFile documentos,RedirectAttributes atrAttributes,RedirectAttributes redirectAttrs) {
 		
@@ -362,16 +384,14 @@ public class Controlador {
 		
 		return"carteles/FormularioAgregarCartel";
 	}
-	/*lista por idusuario de carteles ingresados*/
-	@PostMapping("/listacarteles_usuario/{idusuario}")
-	public String listarcarteles_usuarios(@PathVariable int idusuario,Model model) {
-		
-		 
-		
-		model.addAttribute("cartelpublicitarios", servicecartel.listarIdcartelUsuario(idusuario));
-
-		return "listacarteles_usuario";
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/ListaCartelesUsuario")
+	public String listacartelesusuario(Model model) {
+		model.addAttribute("cartelpublicitario", new CartelPublicitario());
+	return "carteles/ListaDeCartelesUsuario";
 	}
+	
+
 	
 	
 	/**

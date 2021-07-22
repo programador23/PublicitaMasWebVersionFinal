@@ -12,7 +12,7 @@ public interface ICartelPublicitarioService {
 	public int savecartel(CartelPublicitario c);
 	public void deletecartel (int id);
 	
-	public List<CartelPublicitario>listarIdcartelUsuario(int idusuario);
+		List<CartelPublicitario>buscarPorIdusuario(String idusuario);
 
 	
 }

@@ -45,11 +45,12 @@ public class CartelPublicitarioService implements ICartelPublicitarioService {
 	}
 
 	@Override
-	public List<CartelPublicitario> listarIdcartelUsuario(int idusuario) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CartelPublicitario> buscarPorIdusuario(String idusuario) {
+		
+		return data.findByIdusuario(idusuario);
 	}
 
+	
 
 
 
