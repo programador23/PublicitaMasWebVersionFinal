@@ -14,7 +14,11 @@
 </head>
 <header th:replace="NavbarGeneral :: header"></header>
 
+
 <body>
+	
+
+
 <br>
 <div class="btn-group" role="group" aria-label="Basic outlined example">
 <a href="javascript:history.back()" class="btn btn-outline-warning" aria-current="page">Volver Atras</a>
@@ -28,6 +32,10 @@
 
 
 <div class="container mt-4">
+	<div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
+     th:text="${mensaje}"
+     class="alert">
+</div>
 		
 <div class="card">
   <div class="card-body text-center" >
@@ -48,11 +56,14 @@
     Pago<p class="card-text" th:text="${campaniapublicitaria.valor}"></p>
     <a th:href="@{detalle/}+${campaniapublicitaria.id}" class="btn btn-warning">Ver Publicacion</a>
   </div>
-
+<br>
 </div>
 <br>
 </td>
+<br>
 </div>
+
+<br>
 </div>		
 	
 	

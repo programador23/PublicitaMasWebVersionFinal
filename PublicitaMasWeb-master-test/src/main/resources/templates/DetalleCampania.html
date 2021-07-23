@@ -51,7 +51,7 @@
 	</div>
 	</div>
 		<br>
-	<a th:href="@{/postularcampania/}+${campaniapublicitaria.id}"Class="btn btn-warning" >Postular</a>
+	<a th:href="@{/postularcampania/}+${campaniapublicitaria.id}"Class="btn btn-warning"  sec:authorize="isAuthenticated()">Postular</a>
 </div>	
 
 

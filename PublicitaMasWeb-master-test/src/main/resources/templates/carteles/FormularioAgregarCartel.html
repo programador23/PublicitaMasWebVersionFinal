@@ -32,7 +32,8 @@
 							<input th:field="*{id}" type="hidden" class="form-control" />
 						</div>
 						<div class="form-group">
-							 <input th:field="*{idusuario}" type="text" class="form-control"  />
+						<label  th:text="${#authentication.name}" ></label>
+							 <input th:value="${#authentication.name}" th:id="idusuario" th:name="idusuario" type="text" hidden="" class="form-control"  />
 						</div>
 
 						<div class="form-group">
@@ -60,20 +61,20 @@
 								required="required" />
 						</div>
 						<div class="form-group">
-							<label>NUMERO DE CONTACTO</label> <input th:field="*{nrocontacto}" type="number"
+							<label>NUMERO DE CONTACTO</label> <input th:field="*{nrocontacto}" type="tel"
 								 class="form-control" required="required" min="9" />
 						</div>
 
 						<div class="form-group">
 						
 							<label>Regiones</label>
-						<select id="regiones"  th:field="*{region}" name=region class="form-select" required="required"></select>
+						<select id="regiones"  th:field="*{region}" name=region class="form-select" ></select>
 						</div>
 
 
 								<div class="form-group">
 							<label>Comuna</label> 
-							<select id="comunas"  th:field="*{comuna}" name=comuna class="form-select" required="required"></select>
+							<select id="comunas"  th:field="*{comuna}" name=comuna class="form-select" ></select>
 						</div>
 
 					

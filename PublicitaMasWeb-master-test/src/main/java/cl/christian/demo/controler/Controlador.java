@@ -73,6 +73,8 @@ public class Controlador {
 	@GetMapping("/new")
 	public String agregarcampania(Model model) {
 		model.addAttribute("campaniapublicitaria", new CampaniaPublicitaria());
+		model.addAttribute("titulo","Agregar  Campania-Empresa");
+		model.addAttribute("titulo","Agregar  Campania-Empresa");
 		return "usuario/FormularioAgregarCampaña";
 	}
 	
@@ -116,7 +118,7 @@ public class Controlador {
 		redirectAttrs
         .addFlashAttribute("mensaje", "Agregado correctamente")
         .addFlashAttribute("clase", "success");
-		return "redirect:/listar";	
+		return "redirect:/listarPublicidad";	
 	}
 	
 	/**
@@ -201,6 +203,35 @@ public class Controlador {
 	
 	
 	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/idusuario/detalle/{id}")
+	public String detalleCampaniaUsuario(@PathVariable("id") int id,Model model,RedirectAttributes attribute) {
+		
+		 CampaniaPublicitaria campaniapublicitaria= null;
+		
+		
+		  if(id > 0) {
+			  campaniapublicitaria = service.listarId(id);
+		  
+		 if(campaniapublicitaria==null) {
+			 attribute.addFlashAttribute("error","El ID del la Campania no existe");
+			 return "DetalleCampania";
+		 }
+		  }else {
+			  attribute.addFlashAttribute("error","error con el id de la campania");
+			  return "DetalleCampania";
+		  }
+		model.addAttribute("titulo","Detalle de  "+ campaniapublicitaria.getNombre());
+		  
+		model.addAttribute("campaniapublicitaria", campaniapublicitaria);
+		return"DetalleCampania";
+	}
+	
+	
+	
+	
+	
+	
 	
 	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("/listausuario")
@@ -242,21 +273,30 @@ public class Controlador {
 	@GetMapping("/idusuario/")
 	public String BuscarPorIdusuario(@RequestParam String idusuario,Model model,@ModelAttribute("campaniapublicitaria") CampaniaPublicitaria campaniaPublicitaria ) {
 
-		model.addAttribute("PublicidadPorUsuario", service.BuscarPordusuario(idusuario));
+		model.addAttribute("campaniapublicitaria", service.BuscarPordusuario(idusuario));
 		return "usuario/ListaDeCampaniaUsuario";
 	}
 	
 	
 	/*lista por idusuario de carteles ingresados*/
 	@Secured({"ROLE_ADMIN", "ROLE_USER"})
-	@GetMapping("/cartelidusuario/")
-	public String listarcarteles_usuarios(@RequestParam String idusuario,Model model,@ModelAttribute("cartelpublicitario") CartelPublicitario cartelPublicitario) {
+	@GetMapping("/cartelidusuario")
+	public String listarcarteles_usuarios(@RequestParam String idusuario,Model model,@ModelAttribute("cartelpublicitarios") CartelPublicitario cartelPublicitario) {
 		
 		 
 		
 		model.addAttribute("CartelPorUsuario", servicecartel.buscarPorIdusuario(idusuario));
 
 		return "carteles/ListaDeCartelesUsuario";
+	}
+	
+	
+	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/cartel")
+	public String listacartelesusuario(Model model) {
+		model.addAttribute("cartelpublicitarios", new CartelPublicitario());
+	return "carteles/ListaDeCartelesUsuario";
 	}
 	
 	
@@ -275,10 +315,11 @@ public class Controlador {
 	 * Busca el id en la lista para luego para luego tomar el objeto e
 	 * elimina una campaña por su id 
 	 */
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 		@GetMapping("/eliminarcampania/{id}")
 	public String delete(Model model, @PathVariable int id) {
 		service.delete(id);
-		return "redirect:/listar";
+		return "redirect:/listarPublicidad";
 	}
 	
 		
@@ -310,18 +351,19 @@ public class Controlador {
 		return "carteles/listacarteles";
 	} 
 	
-	/**
-	 * llama a la vista FormularioAgregarCartel.html
-	 * y la muestra.
-	 * ademas le entrega a la vista un texto"Agregar Cartel Publicitario" y un tipo Ojebto CartelPublicitario para luego Usarlo
-	 */
+	
+	
+	
 	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("/nuevocartel")
 	public String nuevocartel(Model model) {
 		model.addAttribute("titulo","Agregar Cartel Publicitario");
+		
 		model.addAttribute("cartelpublicitario", new CartelPublicitario());
 		return "carteles/FormularioAgregarCartel";
 	}
+	
+
 	
 	/**
 	 * Esta Clase guarda el formulario de cartel
@@ -362,7 +404,7 @@ public class Controlador {
         .addFlashAttribute("clase", "success");
 		
 		servicecartel.savecartel(c);
-		return "redirect:/listacartelesAdmin";
+		return "redirect:/listacarteles";
 	}
 	
 	/**
@@ -384,12 +426,7 @@ public class Controlador {
 		
 		return"carteles/FormularioAgregarCartel";
 	}
-	@Secured({"ROLE_ADMIN", "ROLE_USER"})
-	@GetMapping("/ListaCartelesUsuario")
-	public String listacartelesusuario(Model model) {
-		model.addAttribute("cartelpublicitario", new CartelPublicitario());
-	return "carteles/ListaDeCartelesUsuario";
-	}
+
 	
 
 	
@@ -400,12 +437,17 @@ public class Controlador {
 	@GetMapping("/eliminarcartel/{id}")
 	public String deletecartel(Model del,@PathVariable int id) {
 		servicecartel.deletecartel(id);
-		return"redirect:/listacartelesAdmin";
+		return"redirect:/index";
 	}
+	
+	
+	
+	
 	@GetMapping("/agregarCartel")
 	//llama
 	public String agregarcartel(Model model) {
 		model.addAttribute("cartelpublicitario", new CartelPublicitario());
+		model.addAttribute("titulo","Agregar Cartel Publicitario");
 		return "carteles/FormularioAgregarCartel";
 	}
 	
@@ -437,6 +479,36 @@ public class Controlador {
 		model.addAttribute("cartelpublicitario", cartelPublicitario);
 		return"carteles/DetalleCartel";
 	}
+	
+	
+	@GetMapping("/cartelidusuario/detallecartel/{id}")
+	public String detalleCartelUsuario(@PathVariable("id") int id,Model model,RedirectAttributes attribute) {
+		
+		 CartelPublicitario cartelPublicitario = null;
+		
+		
+		  if(id > 0) {
+			  cartelPublicitario = servicecartel.listarIdcartel(id);
+		  
+		 if(cartelPublicitario==null) {
+			 attribute.addFlashAttribute("error","El ID del la Cartel no existe");
+			 return "DetalleCampania";
+		 }
+		  }else {
+			  attribute.addFlashAttribute("error","error con el id del cartel");
+			  return "DetalleCampania";
+		  }
+		model.addAttribute("titulo","Detalle de  "+ cartelPublicitario.getTitulo());
+		  
+		model.addAttribute("cartelpublicitario", cartelPublicitario);
+		return"carteles/DetalleCartel";
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -22,8 +22,12 @@
 <body>
 
 
-
 <div class="container mt-4">
+<br>
+	<div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
+     th:text="${mensaje}"
+     class="alert">
+</div>
 <div class="card">
   <div class="card-body text-center" >
     <b>Contrata Un Cartel Publicitario Con Todos sus Documentos al Dia Y Contacta Directamente Con El Encargado </b>

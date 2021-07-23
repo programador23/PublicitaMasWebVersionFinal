@@ -54,4 +54,7 @@ function eliminarcartel(id) {
 		    swal("Tu archivo esta seguro!");
 		  }
 		});
+	
 }
+
+

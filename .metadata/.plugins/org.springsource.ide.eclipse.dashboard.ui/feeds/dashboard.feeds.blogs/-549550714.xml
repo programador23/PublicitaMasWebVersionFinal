@@ -5,7 +5,73 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-07-20T14:33:00Z</updated>
+  <updated>2021-07-23T01:00:00Z</updated>
+  <entry>
+    <title>Spring Boot 2.6.0-M1 is now available</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/07/22/spring-boot-2-6-0-m1-is-now-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2021-07-23:4505</id>
+    <updated>2021-07-23T01:00:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.6.0-M1&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.6.0-M1"&gt;120 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Notable new features include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Auto-configuration for Spring Data Envers&lt;/li&gt;
+  &lt;li&gt;More metrics support (including task execution and scheduling export and support for the Dynatrace v2 API)&lt;/li&gt;
+  &lt;li&gt;Auto-configured Spring Web Service Server Tests&lt;/li&gt;
+  &lt;li&gt;Improved Configuration of the Maven Plugin’s Start Goal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.6.0.M1-Release-Notes"&gt;release notes&lt;/a&gt; for more details and upgrade instructions.&lt;/p&gt;
+&lt;p&gt;Thanks to all those who have contributed with issue reports and pull requests. Our next set of releases are due August 19, 2021.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.6.0-M1/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.5.3 is now available</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/07/22/spring-boot-2-5-3-is-now-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2021-07-22:4504</id>
+    <updated>2021-07-22T14:31:26Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.5.3&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.5.3"&gt;58 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.5.3/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.4.9 is now available</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/07/22/spring-boot-2-4-9-is-now-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2021-07-22:4503</id>
+    <updated>2021-07-22T10:58:32Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.4.9&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.4.9"&gt;35 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.4.9/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>A Bootiful Podcast: industry analyst, fascinating person, strategist, and storyteller Michael Coté</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/07/22/a-bootiful-podcast-industry-analyst-fascinating-person-strategist-and-storyteller-michael-cot" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-07-22:4502</id>
+    <updated>2021-07-22T07:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, &lt;a href="https://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to industry analyst, fascinating person, strategist, and storyteller &lt;a href="https://twitter.com/cote"&gt;Michael Coté (@cote)&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe title="Industry analyst, fascinating person, strategist, and storyteller Michael Coté" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=rnh9u-1096575-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=auto&amp;btn-skin=7"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - July 20th, 2021</title>
     <link rel="alternate" href="https://spring.io/blog/2021/07/20/this-week-in-spring-july-20th-2021" />
@@ -577,117 +643,6 @@ dependencies {&#xD;
 &lt;p&gt;Please, read the &lt;a href="https://spring.io/blog/2021/07/06/introducing-spring-graphql"&gt;follow-up blog&lt;/a&gt; post for more details. &lt;/p&gt;
 &lt;p&gt;The GraphQL Java and Spring teams will have a joint talk at &lt;a href="https://springone.io/"&gt;SpringOne&lt;/a&gt; on September 2-3. Please, register to attend the conference, which is online and free for a second, consecutive year.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://twitter.com/andimarek"&gt;Andy Marek&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Benjamin Wilms, founder of the Chaos Monkey for Spring Boot and Steadybit, a company to help you build more robust software</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/07/01/a-bootiful-podcast-benjamin-wilms-founder-of-the-chaos-monkey-for-spring-boot-and-steadybit-a-company-to-help-you-build-more-robust-software" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-07-01:4485</id>
-    <updated>2021-07-01T17:00:00Z</updated>
-    <content type="html">&lt;iframe title="Benjamin Wilms, founder of the Chaos Monkey for Spring Boot and Steadybit, a company to help you build more robust services" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=35pgq-107b44a-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;btn-skin=7"&gt;&lt;/iframe&gt;
-&lt;p&gt;Hi, Spring fans! In this installment, I am so happy to talk to Benjamin Wilms, who founded the Chaos Monkey for Spring Boot, and recently co-founded - along with Spring Boot Admin cofounder Johannes Edemeir - an exciting company called Steadybit whose SaaS tool aims to make your systems and services more robust. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/MrBWilms"&gt;@MrBWilms&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://twitter.com/steadybithq"&gt;@steadybithq&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Use New Relic to effortlessly monitor applications and dependencies in Azure Spring Cloud</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/07/01/use-new-relic-to-effortlessly-monitor-applications-and-dependencies-in-azure-spring-cloud" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-07-01:4484</id>
-    <updated>2021-07-01T15:00:00Z</updated>
-    <content type="html">&lt;p&gt;Today, we are excited to announce the &lt;strong&gt;integration of New Relic One&lt;/strong&gt; performance monitoring in Azure Spring Cloud.&lt;/p&gt;
-&lt;p&gt;Over the past 18 months, we worked with many enterprise customers to learn about their scenarios. Many of these customers have thousands of Spring Boot applications running in on-premises data centers. As they migrate these applications to the cloud, they need to instrument them for application performance monitoring (APM) using tools that their developers are familiar with and have been using for years, and they must ensure continuity for desktop and mobile applications which are already pre-instrumented for end-to-end monitoring using agents like New Relic. With the integration of New Relic One in Azure Spring Cloud, you can continue your journey and easily instrument your Spring Boot applications with New Relic One.&lt;/p&gt;
-&lt;p&gt;Most organizations that deploy Spring Boot applications today share a similar goal: maximize the benefits of running Spring Boot applications at virtually any scale, using automation and APM. While Azure Spring Cloud excels at abstracting away much of the toil associated with managing containerized workloads, the challenge of monitoring and maintaining the performance and health of these applications, or of troubleshooting issues when they occur, can be daunting—especially as organizations deploy these applications at massive scale. To help you succeed and continue your New Relic One journey, we integrated and upgraded your ability to instrument, monitor and deliver observability using New Relic One across your Azure Spring Cloud instances. That begins with setting up instrumentation quickly and easily. Then you can analyze the performance and health of your applications, JVMs, transactions, and more to identify and troubleshoot performance issues.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Instrument your Spring Boot applications.&lt;/strong&gt; Run a &amp;ldquo;provisioning&amp;rdquo; automation for a complete hands-off experience for instrumenting and monitoring any new applications that you create and deploy – using Terraform or ARM Template. Or you can run it on-demand using the Azure CLI for greater flexibility and control.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;az spring-cloud app update --name customers-service \&#xD;
---jvm-options=&amp;quot;-javaagent:/opt/agents/newrelic/java/newrelic-agent.jar&amp;quot; \&#xD;
---env NEW_RELIC_APP_NAME=customers-service NEW_RELIC_LICENSE_KEY=&amp;lt;key&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Explore Spring Boot application performance.&lt;/strong&gt; After instrumenting, you can explore Spring Boot application performance through the New Relic One portal. You can view all of your applications in action through the Service Maps. For example, the screenshot below shows all the applications in the popular Petclinic project:&lt;/p&gt;
-&lt;img src = "https://github.com/joshlong/blog-images/raw/master/july-1-2021/2-Service-maps.jpg" /&gt;
-&lt;div&gt;&lt;em&gt;Screenshot 1 - shows all the applications in the popular Petclinic project&#xD;
-&lt;/em&gt;&lt;/div&gt;
-&lt;p&gt;You can observe your application’s performance by navigating through application-by-application in the New Relic portal. For example, the screenshot below shows transactions processed by customers-service, its throughput, and error rate:&lt;/p&gt;
-&lt;img src = "https://github.com/joshlong/blog-images/raw/master/july-1-2021/2-customers-service-summary.jpg" /&gt;
-&lt;div&gt;&lt;em&gt;Screenshot 2 - shows transactions processed by customers-service, its throughput and error rate&lt;/em&gt;&lt;/div&gt;
-&lt;p&gt;You can look deeper into the underlying JVMs by navigating to the “JVMs” blade on the New Relic portal. For example, the screenshot below shows how many JVMs for all the customers-service application instances:&lt;/p&gt;
-&lt;img src = "https://github.com/joshlong/blog-images/raw/master/july-1-2021/2-customers-service-jvms.jpg" /&gt;
-&lt;div&gt;&lt;em&gt;Screenshot 3 - shows how many JVMs for all the customers-service application instances&lt;/em&gt;&lt;/div&gt;
-&lt;p&gt;You can analyze application dependencies, including database transactions by navigating to the “Databases” blade in the New Relic One portal. For example, the screenshot below shows all the database transactions for customers-service.&lt;/p&gt;
-&lt;img src = "https://github.com/joshlong/blog-images/raw/master/july-1-2021/2-customers-service-databases.jpg" /&gt;
-&lt;div&gt;&lt;em&gt;Screenshot 4 - shows all the database transactions for customers-service&#xD;
-&lt;/em&gt;&lt;/div&gt;
-&lt;p&gt;You can look at the stack trace of each thread through the New Relic One Thread Profiler and understand times consumed by Java methods. This provides insights into the &amp;ldquo;hot&amp;rdquo; functions of the applications where most time is spent. For example, the screenshot below shows a stack trace of a thread in the customers-service application.&lt;/p&gt;
-&lt;img src = "https://github.com/joshlong/blog-images/raw/master/july-1-2021/2-customers-service-thread-profiler.jpg" /&gt;
-&lt;div&gt;&lt;em&gt;Screenshot 5 - shows a stack trace of a thread in the customers-service&#xD;
-&lt;/em&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Deliver value to your end-users.&lt;/strong&gt; Once instrumented, as you scale out to multiple Spring Boot application instances, any new application instances are automatically monitored for you. You spend less time managing the agent installation and maintenance and more energy on identifying and resolving incidents faster. Azure Spring Cloud service is on-point for periodically updating the agent.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;View of all your Spring Boot application instances.&lt;/strong&gt; New Relic One Navigator offers you an at-a-glance view of the operational health of all your application instances. This bird&amp;rsquo;s eye view of your estate is automatically available to you, no configuration required. Navigator makes it easy for you to explore huge numbers of instances as it intuitively displays all your instances in a dense honeycomb view with traffic light colors based on alerts that you define. Quickly identify alerting instances and uncover root causes in addition to seeing which dependent systems might be affected.&lt;/p&gt;
-&lt;p&gt;As an illustration, the following Navigator view groups your instances across Azure Spring Cloud instances, allowing you to quickly compare your operations in a multi-region deployment. You can group and filter across all your instances to quickly zero in on issues. You can also drill down into any instance to see a summary of its activity and any violations along with key metrics and metadata including custom attributes.&lt;/p&gt;
-&lt;img src = "https://github.com/joshlong/blog-images/raw/master/july-1-2021/2-new-relic-navigator.jpg" /&gt;
-&lt;div&gt;&lt;em&gt;Screenshot 6 – show how Navigator view groups your instances across Azure Spring Cloud instances&#xD;
-&lt;/em&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Detect anomalies in your Spring Boot application instances.&lt;/strong&gt; New Relic Lookout provides an intuitive view of your instances that are deviating from normal behavior, using circle visualization with color indicating the severity of recent signal change and sized proportionally to the magnitude of the metric signal. Lookout automatically compares signals within the last five minutes against the previous hour. &lt;/p&gt;
-&lt;p&gt;Similarly, you can use New Relic for &lt;strong&gt;monitoring Java applications in Azure services such as &lt;a href="https://docs.newrelic.com/docs/agents/java-agent/additional-installation/install-new-relic-java-agent-docker/"&gt;Azure Kubernetes Service and Virtual Machines&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#build-your-solutions-and-monitor-them-today" class="anchor" name="build-your-solutions-and-monitor-them-today"&gt;&lt;/a&gt;Build your solutions and monitor them today!&lt;/h2&gt;
-&lt;p&gt;Azure Spring Cloud is jointly built, operated, and supported by Microsoft and VMware. It is a fully managed service for Spring Boot applications that abstracts away the complexity of infrastructure and Spring Cloud middleware management, so you can focus on building your business logic and let Azure take care of dynamic scaling, patches, security, compliance, and high availability. With a few steps, you can provision Azure Spring Cloud, create applications, deploy, and scale Spring Boot applications and start monitoring in minutes. We will continue to bring more developer-friendly and enterprise-ready features to Azure Spring Cloud.&lt;/p&gt;
-&lt;p&gt;We would love to hear how you are building impactful solutions using Azure Spring Cloud. Get started today – deploy Spring applications to Azure Spring Cloud using &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/quickstart?tabs=Azure-CLI&amp;pivots=programming-language-java"&gt;quickstart&lt;/a&gt;!&lt;/p&gt;&lt;h2&gt;&lt;a href="#resources" class="anchor" name="resources"&gt;&lt;/a&gt;Resources&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Learn using an &lt;a href="https://docs.microsoft.com/en-us/learn/modules/azure-spring-cloud-workshop/"&gt;MS Learn module&lt;/a&gt; or &lt;a href="https://github.com/microsoft/azure-spring-cloud-training"&gt;self-paced workshop&lt;/a&gt; on GitHub&lt;/li&gt;
-  &lt;li&gt;Learn &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/"&gt;more&lt;/a&gt; about implementing solutions on Azure Spring Cloud&lt;/li&gt;
-  &lt;li&gt;Learn &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/how-to-new-relic-monitor"&gt;more&lt;/a&gt; about New Relic Java agent in Azure Spring Cloud&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/Azure-Samples/spring-petclinic-microservices"&gt;Deploy&lt;/a&gt; a distributed version of Spring Petclinic built with Spring Cloud&lt;/li&gt;
-  &lt;li&gt;Deploy Spring Boot applications by leveraging enterprise best practices – &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/reference-architecture"&gt;Azure Spring Cloud Reference Architecture&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Migrate your &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud"&gt;Spring Boot&lt;/a&gt;, &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-cloud"&gt;Spring Cloud&lt;/a&gt; and &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/migration/migrate-tomcat-to-azure-spring-cloud"&gt;Tomcat&lt;/a&gt; applications to Azure Spring Cloud&lt;/li&gt;
-  &lt;li&gt;Wire Spring applications to &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/"&gt;interact with Azure services&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;For feedback and questions, &lt;a href="mailto:AzureSpringCloud-Talk@service.microsoft.com"&gt;please e-mail us.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: Spring Retrosocket</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/06/30/spring-tips-spring-retrosocket" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-06-26:4480</id>
-    <updated>2021-06-30T07:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, Josh Long looks at &lt;a href="http://github.com/spring-projects-experimental/spring-retrosocket/"&gt;Spring Retrosocket&lt;/a&gt;, an &lt;em&gt;EXPERIMENTAL&lt;/em&gt; project designed to provide an OpenFeign- or Retrofit-like experience for RSocket clients. &lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/vHOztWJNnBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - June 29th, 2021</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/06/29/this-week-in-spring-june-29th-2021" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-06-30:4482</id>
-    <updated>2021-06-29T08:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! How&amp;rsquo;re you doin&amp;rsquo;? I&amp;rsquo;ve been busy working on new Spring Tips videos! (You are subscribed &lt;a href="https://spring.io/video"&gt;to our YouTube channel&lt;/a&gt;, aren&amp;rsquo;t you?) I&amp;rsquo;ll be doing Tanzu Code tomorrow, so don&amp;rsquo;t miss that. We&amp;rsquo;re going to be hacking on Spring Native, Spring Cloud Square, Spring Integration, and so much more. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Hi, Spring fans! In last week&amp;rsquo;s installment of &lt;a href="https://spring.io/blog/2021/06/23/spring-tips-kubernetes-native-java"&gt;&lt;em&gt;Spring Tips&lt;/em&gt;, I look at &lt;em&gt;Kubernetes Native Java&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/24/a-bootiful-podcast-webassembly-iot-data-science-and-java-guru-brian-sletten"&gt;A Bootiful Podcast: webassembly, IoT, data science, and Java guru Brian Sletten&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://kubernetes.io/blog/2021/06/28/announcing-kubernetes-community-group-annual-reports/"&gt;Blog: Announcing Kubernetes Community Group Annual Reports&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/28/cve-report-published-for-spring-security"&gt;CVE report published for Spring Security&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I was on the Software-Defined Talk podcast with Michael Coté last week. Check it out: &lt;a href="https://www.softwaredefinedtalk.com/308"&gt;Developer Relations with Josh Long&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/graalvm/status/1409910276015726594?s=12"&gt;A new version of GraalVM Native Image build tools is available!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/24/spring-boot-2-4-8-is-now-available"&gt;Spring Boot 2.4.8 is now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/24/spring-boot-2-5-2-is-now-available"&gt;Spring Boot 2.5.2 is now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/25/spring-integration-zip-2-0-0-available"&gt;Spring Integration Zip 2.0.0 Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1409930916386979845"&gt;Meet the team that worked with many customers to build the Azure Spring Cloud reference architecture. Deploy Spring Boot apps with confidence using enterprise best practices &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

@@ -31,12 +31,14 @@
 								class="form-control" />
 						</div>
 							<div class="form-group">
-							 <input th:field="*{idusuario}" type="text"
-								hidden class="form-control" />
+							<label  th:text="${#authentication.name}" ></label>
+							 <input    th:value="${#authentication.name}" th:id="idusuario" th:name="idusuario" type="text" hidden=""
+								class="form-control" />
 						</div>
 
+
 						<div class="form-group">
-							<label>TITULO DE LA CAMPANIA</label> <input th:field="*{nombre}" type="text"
+							<label>TITULO DE LA CAMPANIA</label> <input th:field="*{nombre}"  type="text"
 								class="form-control" required="required"/>
 						</div>
 
@@ -46,7 +48,7 @@
 						</div>
 						
 												<div class="form-group">
-							<label>VALOR DE CAMAPANIA</label> <input th:field="*{valor}" type="text"
+							<label>VALOR DE CAMAPANIA</label> <input th:field="*{valor}" type="number"
 								class="form-control" required="required"/>
 						</div>
 						
@@ -61,7 +63,7 @@
 						</div>
 						
 												<div class="form-group">
-							<label>IMAGEN DE LA CAMPANIA</label> <input type="file" name="file" id="image" />
+							<label>IMAGEN DE LA CAMPANIA</label> <input type="file" name="file" id="image" required="required" />
 						</div>
 						
 						

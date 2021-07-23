@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeLeaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Mis Campanias</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -24,11 +24,7 @@
 			aria-current="page">Volver Atras</a>
 	</div>
 	<br>
-	<!-- 				<form th:action="@{/idusuario/}" th:object="${campaniapublicitaria}" method="get"> -->
-	<!-- 		<input type="text" th:field="*{idusuario}" class="from-control col-md-4" /> -->
-	<!-- 		<button type="submit" class="btn btn-warning">Buscar</button> -->
-	<!-- 		</form> -->
-
+	
 	<div class="container mt-4">
 		<a th:href="@{/new}" class="btn btn-light">Agregar Nueva Campania</a>
 		<br>
@@ -54,7 +50,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="campaniapublicitaria:${PublicidadPorUsuario}">
+					<tr th:each="campaniapublicitaria:${campaniapublicitaria}">
 						<td th:text="${campaniapublicitaria.id}"></td>
 						<td th:text="${campaniapublicitaria.idusuario}"></td>
 						<td th:text="${campaniapublicitaria.nombre}"></td>
@@ -66,9 +62,9 @@
 						<td><a th:href="@{detalle/}+${campaniapublicitaria.id}"
 							Class="btn btn-success">Ver Detalle</a> <a
 							th:href="@{/modificarcampania/}+${campaniapublicitaria.id}"
-							Class="btn btn-warning">Modificar</a> <a
-							th:href="@{/eliminarcampania/}+${campaniapublicitaria.id}"
-							Class="btn btn-danger">Eliminar</a>
+							Class="btn btn-warning">Modificar</a> 
+							
+							<a th:onclick="eliminarcampania([[${campaniapublicitaria.id}]])"Class="btn btn-danger">Eliminar</a>
 					</tr>
 				</tbody>
 			</table>
@@ -76,8 +72,39 @@
 		</div>
 
 	</div>
-	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	function eliminarcampania(id) {
+		swal({
+			  title: "Estas Seguro de Eliminar?",
+			  text: "Una vez eliminado, no podras recuperar los datos",
+			  icon: "warning",
+			  buttons: true,
+			  dangerMode: true,
+			})
+			.then((OK) => {
+			  if (OK) {
+				  $.ajax({
+					 url:"/eliminarcampania/"+id,
+					 success: function(res) {
+						console.log(res);
+					}
+				  });
+			    swal("Poof... El archivo ha sido eliminado", {
+			      icon: "success",
+			    }).then((ok)=>{
+			    	if(ok){
+			    		location.reload();
+			    	}
+			    });
+			  } else {
+			    swal("Tu archivo esta seguro!");
+			  }
+			});
+	}
+	</script>
+	
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="funciones.js"></script>
-</body>
 </html>

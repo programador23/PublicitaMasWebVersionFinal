@@ -24,13 +24,13 @@
 			aria-current="page">Volver Atras</a>
 	</div>
 	<br>
-<!-- 		<form th:action="@{/cartelidusuario/}" th:object="${cartelpublicitario}" method="get">  -->
-<!-- 			<input type="text" th:field="*{idusuario}" class="from-control col-md-4" />  -->
-<!-- 			<button type="submit" class="btn btn-warning">Buscar</button>  -->
-<!-- 			</form> -->
+<!-- 		<form th:action="@{/cartelidusuario}" th:object="${cartelpublicitarios}" method="get">   -->
+<!-- 			<input type="text" th:field="*{idusuario}" class="from-control col-md-4" />   -->
+<!-- 		<button type="submit" class="btn btn-warning">Buscar</button>   -->
+<!-- 		</form>  -->
 
 	<div class="container mt-4">
-		<a th:href="@{/savecartel}" class="btn btn-light">Agregar Nuevo Cartel</a>
+		<a th:href="@{/agregarCartel}" class="btn btn-light">Agregar Nuevo Cartel</a>
 		<br>
 		<div class="card">
 			<div class="card-body text-center">
@@ -59,7 +59,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="cartelpublicitarios:${cartelpublicitarios}">
+				<tr th:each="cartelpublicitarios:${CartelPorUsuario}">
 
 
 
@@ -82,11 +82,12 @@
 					
 
 					<td>
+					<a th:href="@{detallecartel/}+${cartelpublicitarios.id}"Class="btn btn-success">VerDetalle</a>
 						<a th:href="@{/modificarcartel/}+${cartelpublicitarios.id}"
 							Class="btn btn-warning">Modificar</a>
-							<a th:onclick="eliminarcartel([[${cartelpublicitarios.id}]])"Class="btn btn-warning">Eliminar</a>
+							<a th:onclick="eliminarcartel([[${cartelpublicitarios.id}]])"Class="btn btn-danger">Eliminar</a>
 				
-							<a th:href="@{detallecartel/}+${cartelpublicitarios.id}"Class="btn btn-warning">VerDetalle</a>
+							
 				</tr>
 			</tbody>
 		</table>
@@ -94,6 +95,39 @@
 		</div>
 
 	</div>
+<script type="text/javascript">
+function eliminarcartel(id) {
+	swal({
+		  title: "Estas Seguro de Eliminar?",
+		  text: "Una vez eliminado, no podrss recuperar los datos",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+		.then((OK) => {
+		  if (OK) {
+			  $.ajax({
+				 url:"/eliminarcartel/"+id,
+				 success: function(res) {
+					console.log(res);
+				}
+			  });
+		    swal("Poof... El archivo ha sido eliminado", {
+		      icon: "success",
+		    }).then((ok)=>{
+		    	if(ok){
+		    		location.reload();
+		    	}
+		    });
+		  } else {
+		    swal("Tu archivo esta seguro!");
+		  }
+		});
+	
+}
+</script>
+
+
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="funciones.js"></script>
