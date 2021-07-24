@@ -11,6 +11,7 @@ import java.util.jar.Attributes;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -25,8 +26,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import cl.christian.demo.interfaceService.ICampaniaPublicitariaService;
 import cl.christian.demo.interfaceService.ICartelPublicitarioService;
+import cl.christian.demo.interfaceService.IPostulacionesService;
+import cl.christian.demo.interfaceService.IRolesService;
+import cl.christian.demo.interfaceService.IUsersService;
 import cl.christian.demo.modelo.CampaniaPublicitaria;
 import cl.christian.demo.modelo.CartelPublicitario;
+import cl.christian.demo.modelo.Postulacion;
+import cl.christian.demo.modelo.Roles;
+import cl.christian.demo.modelo.User;
 
 /**
  * @author Christian
@@ -48,7 +55,7 @@ public class Controlador {
 	public String listarcampania(Model model) {
 		List<CampaniaPublicitaria>campaniapublicitaria=service.listarcampania();
 		model.addAttribute("campaniapublicitaria", campaniapublicitaria);
-		return "index";
+		return "listacampaniapublicitariaAdm";
 	}
 	
 	/**
@@ -412,6 +419,7 @@ public class Controlador {
 	 * luego entrega el id con el objeto asociado
 	 * y manda los datos a una vista para cargarlos 
 	 */
+	
 	@GetMapping("modificarcartel/{id}")
 	public String editarcartel(@PathVariable int id,Model model, RedirectAttributes redirectAttrs) {
 		CartelPublicitario cartelpublicitario=servicecartel.listarIdcartel(id);
@@ -498,12 +506,91 @@ public class Controlador {
 			  attribute.addFlashAttribute("error","error con el id del cartel");
 			  return "DetalleCampania";
 		  }
-		model.addAttribute("titulo","Detalle de  "+ cartelPublicitario.getTitulo());
+		model.addAttribute("mensaje","Detalle de  "+ cartelPublicitario.getTitulo());
 		  
 		model.addAttribute("cartelpublicitario", cartelPublicitario);
 		return"carteles/DetalleCartel";
 	}
 	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+	
+	@Autowired
+	private IUsersService serviceUsuario;
+	@Autowired
+	private IRolesService serviceRoles;
+	
+	@GetMapping("/create")
+	public String Crear(@ModelAttribute User user) {
+		return "registro";
+	}
+	
+	@PostMapping("/saveUsuario")
+	public String Guardar(@ModelAttribute User user,Model model) {
+	String tmPass = user.getPassword();
+	String encriptado = encoder.encode(tmPass);
+	
+	user.setPassword(encriptado);
+	user.setEnabled(1);
+	
+	serviceUsuario.guardar(user);
+	int idcopia = user.getIdusuario();
+	
+	
+	Roles roles = new Roles();
+	roles.setUser_id(idcopia);
+	roles.setRol("ROLE_USER");
+	
+	serviceRoles.guardar(roles);
+	
+	model.addAttribute("mensaje","Usuario Registrado Exitosamente "+ user.getUsername());
+	
+		
+		return"redirect:/index";
+	}
+	@Autowired
+	private IPostulacionesService servicePostulaciones;
+	
+	@GetMapping("/postular/{id}")
+	public String Postular(@ModelAttribute Postulacion postulacion,@PathVariable("id") int id,Model model) {
+		
+	model.addAttribute("mensaje", id);
+		
+		return "postular";
+	}
+	@PostMapping("/guardarPostulacion/")
+	public String GuardarPostulacion(@ModelAttribute Postulacion postulacion, Model model) {
+		
+		try {
+			postulacion.setMensajeIns(null);
+			postulacion.setEstado("Postulacion enviada");
+			servicePostulaciones.guardar(postulacion);
+			model.addAttribute("mensaje","Postulacion Exitosa ");
+		}catch (Exception e) {
+			model.addAttribute("mensaje", "Ya ");
+			model.addAttribute("mensaje","Ya Postulaste a esta Publicidad...");
+			return"redirect:/index";
+		}
+		
+		
+		return"redirect:/index";
+	}
+	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/postulaciones")
+	public String postulacionusuario(Model model) {
+		model.addAttribute("postulaciones", new Postulacion());
+		return"ListaDePostulacionesUsuario";
+	}
+	
+	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/postulacionUsuario")
+	public String listaPostulacionesUsuario(@RequestParam String idusuario,Model model,@ModelAttribute("postulaciones")Postulacion postulacion) {
+		
+		model.addAttribute("PostulacionPorUsuario", servicePostulaciones.buscarPorIdusuario(idusuario));
+		return"ListaDePostulacionesUsuario";
+	}
 	
 	
 	

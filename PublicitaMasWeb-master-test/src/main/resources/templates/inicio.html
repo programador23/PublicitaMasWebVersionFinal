@@ -14,9 +14,18 @@
 <header th:replace="NavbarGeneral :: header"></header>
 
 <body>
+
+<div class="alert alert-success alert-dismissable " th:if="${mensaje != null}"
+     th:text="${success}">
+</div>
 	<br>
 <div class="card" >
+
+
+
   <div class="card-header">
+  
+  
     Empresa Publicita+
   </div>
   <div class="card-body">

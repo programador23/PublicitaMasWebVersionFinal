@@ -5,7 +5,21 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-07-23T01:00:00Z</updated>
+  <updated>2021-07-23T12:00:00Z</updated>
+  <entry>
+    <title>Premiering Now: SpringOne Tour - July 2021: Do or Do Not, There is no try{} in Production</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/07/23/premiering-now-springone-tour-july-2021-do-or-do-not-there-is-no-try-in-production" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-07-23:4506</id>
+    <updated>2021-07-23T12:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this July 2021 installment of SpringOne Tour, Josh Long, Cora Iberkleid, Angie Jones, Madhura Bhave, Bella Bai, Olga Maciaszek-Sharma, Whitney Lee, and Nate Schutta look at the wide and wonderful world of testing, continuous integration, and continuous delivery. &lt;/p&gt;
+&lt;p&gt;This event - a mini-conference if you will - is two hours and some change long and features dedicated segments from the industry&amp;rsquo;s best, so grab a drink, a note pad, and let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/pQwMws6we6I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 2.6.0-M1 is now available</title>
     <link rel="alternate" href="https://spring.io/blog/2021/07/22/spring-boot-2-6-0-m1-is-now-available" />
@@ -615,34 +629,6 @@ dependencies {&#xD;
 &lt;p&gt;We aim to have stable APIs and enter an RC phase late this year. To get there, we need your feedback. Please, give it a try, and create an issue, or comment under existing issues in our &lt;a href="https://github.com/spring-projects/spring-graphql/issues"&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#resources" class="anchor" name="resources"&gt;&lt;/a&gt;Resources&lt;/h3&gt;
 &lt;p&gt;For more details on Spring GraphQL features, please check the &lt;a href="https://github.com/spring-projects/spring-graphql#documentation"&gt;reference documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The GraphQL Java and Spring teams will present jointly at this year&amp;rsquo;s &lt;a href="https://springone.io"&gt;SpringOne&lt;/a&gt; conference, which is once again free and online for a second straight year. Please, register to attend our talk and to interact with speakers and attendees.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Hello, Spring GraphQL</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/07/06/hello-spring-graphql" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Rossen Stoyanchev</name>
-    </author>
-    <id>tag:spring.io,2021-07-06:4487</id>
-    <updated>2021-07-06T16:55:00Z</updated>
-    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Guest Author&lt;/strong&gt;: &lt;a href="https://twitter.com/andimarek"&gt;Andi Marek&lt;/a&gt;, GraphQL Java founder&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I am very happy to announce the creation of the &lt;a href="https://github.com/spring-projects/spring-graphql"&gt;Spring GraphQL&lt;/a&gt; project and the availability of an initial milestone towards a 1.0 release. The project integrates &lt;a href="https://www.graphql-java.com/"&gt;GraphQL Java&lt;/a&gt; and Spring and was developed in collaboration between both teams.&lt;/p&gt;
-&lt;p&gt;Today is GraphQL Java&amp;rsquo;s 6th birthday! One fundamental decision I made from the start was to leave any HTTP and IO aspects as a separate concern. GraphQL Java has always been &amp;ldquo;just&amp;rdquo; an engine to execute GraphQL requests. The decision has paid off but the obvious downside is the need to create your own HTTP adapter for real world usage.&lt;/p&gt;
-&lt;p&gt;This lead to the creation of a multitude of GraphQL integrations for Spring over the years, including the &lt;a href="https://github.com/graphql-java/graphql-java-spring"&gt;GraphQL Java Spring&lt;/a&gt; project from the GraphQL Java team.&lt;/p&gt;
-&lt;p&gt;But quite frankly I always aspired a first class Spring integration.&lt;/p&gt;
-&lt;p&gt;Nearly exactly one year ago to this day, the GraphQL Java and Spring teams had their first meeting to discuss how to make this happen.&lt;/p&gt;
-&lt;p&gt;Over the past 12 months, despite challenging timezone differences, we have collaborated on and discussed a wide range of topics. We are now ready to bring this effort to a wider audience with a milestone release.&lt;/p&gt;
-&lt;p&gt;Special thanks to &lt;a href="https://spring.io/team/rstoyanchev"&gt;Rossen&lt;/a&gt; and &lt;a href="https://spring.io/team/bclozel"&gt;Brian&lt;/a&gt; for the great collaboration, as well as to &lt;a href="https://spring.io/team/rwinch"&gt;Rob&lt;/a&gt; and &lt;a href="https://spring.io/team/mp911de"&gt;Mark&lt;/a&gt; and the increasing number of Spring engineers who are joining the effort.&lt;/p&gt;
-&lt;p&gt;I truly believe that this project is huge step for GraphQL Java and for the wider GraphQL ecosystem: having a Spring integration that&amp;rsquo;s maintained and evolved by Spring engineers is a key factor for the success of GraphQL.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-graphql"&gt;Spring GraphQL&lt;/a&gt; is the successor of &lt;a href="https://github.com/graphql-java/graphql-java-spring"&gt;GraphQL Java Spring&lt;/a&gt;. The intent is for Spring GraphQL to become the foundation for all Spring applications for GraphQL, building in turn on GraphQL Java.&lt;/p&gt;
-&lt;p&gt;Our general philosophy for both GraphQL Java and Spring GraphQL is to be unopinionated and focused on comprehensive and wide ranging support. Our hope is that similar existing integrations for Spring and GraphQL Java will choose to build on Spring GraphQL and instead focus on providing higher level support and more opinionated features. &lt;/p&gt;
-&lt;p&gt;A very important goal is to hear from you, the community, to help us stabilize APIs and the set of features towards the 1.0 release. If you have GraphQL applications, please have a look and let us know by &lt;a href="https://github.com/spring-projects/spring-graphql/issues"&gt;opening an issue&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Please, read the &lt;a href="https://spring.io/blog/2021/07/06/introducing-spring-graphql"&gt;follow-up blog&lt;/a&gt; post for more details. &lt;/p&gt;
-&lt;p&gt;The GraphQL Java and Spring teams will have a joint talk at &lt;a href="https://springone.io/"&gt;SpringOne&lt;/a&gt; on September 2-3. Please, register to attend the conference, which is online and free for a second, consecutive year.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://twitter.com/andimarek"&gt;Andy Marek&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

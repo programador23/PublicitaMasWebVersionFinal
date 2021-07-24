@@ -57,8 +57,9 @@
 						</div>
 
 						<div class="form-group">
-							<label>CORREO</label> <input th:field="*{correo}" type="email" class="form-control"
+							<label>CORREO</label> <input th:field="*{correo}" type="email" class="form-control" id="email"
 								required="required" />
+								<span id="emailOK"></span>
 						</div>
 						<div class="form-group">
 							<label>NUMERO DE CONTACTO</label> <input th:field="*{nrocontacto}" type="tel"
@@ -113,6 +114,22 @@
 		</div>
 	</div>
 	
+<script type="text/javascript">
+document.getElementById('email').addEventListener('input', function() {
+    campo = event.target;
+    valido = document.getElementById('emailOK');
+        
+    emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    //Se muestra un texto a modo de ejemplo, luego va a ser un icono
+    if (emailRegex.test(campo.value)) {
+      valido.innerText = "Correo valido";
+      valido.style="color:#1ef613";
+    } else {
+      valido.innerText = "Correo No Valido";
+      valido.style="color:red";
+    }
+});
+</script>
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="regionesycomunas.js"></script>
 </body>

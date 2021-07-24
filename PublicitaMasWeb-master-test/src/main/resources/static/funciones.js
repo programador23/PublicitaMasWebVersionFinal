@@ -58,3 +58,6 @@ function eliminarcartel(id) {
 }
 
 
+
+
+
