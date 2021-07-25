@@ -149,6 +149,7 @@ public class Controlador {
 		return"usuario/FormularioAgregarCampaña";
 	}
 	
+
 	
 	/*Detalle de campaña por id*/
 	
@@ -524,7 +525,7 @@ public class Controlador {
 	public String Crear(@ModelAttribute User user) {
 		return "registro";
 	}
-	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@PostMapping("/saveUsuario")
 	public String Guardar(@ModelAttribute User user,Model model) {
 	String tmPass = user.getPassword();
@@ -558,12 +559,14 @@ public class Controlador {
 		
 		return "postular";
 	}
+	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@PostMapping("/guardarPostulacion/")
 	public String GuardarPostulacion(@ModelAttribute Postulacion postulacion, Model model) {
 		
 		try {
 			postulacion.setMensajeIns(null);
-			postulacion.setEstado("Postulacion enviada");
+			postulacion.setEstado("Postulacion Pendiente");
 			servicePostulaciones.guardar(postulacion);
 			model.addAttribute("mensaje","Postulacion Exitosa ");
 		}catch (Exception e) {
@@ -575,6 +578,22 @@ public class Controlador {
 		
 		return"redirect:/index";
 	}
+	
+	//guardar aprobacion de  postulacion
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@PostMapping("/guardarPostulacionAprobado")
+	public String GuardarPostulacionAprobado(@ModelAttribute Postulacion postulacion, Model model) {
+		
+			
+			postulacion.setEstado("Postulacion Aprobada");
+			servicePostulaciones.guardar(postulacion);
+			model.addAttribute("mensaje","Postulacion Aprobada ");
+	
+		
+		
+		return"redirect:/index";
+	}
+	
 	
 	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("/postulaciones")
@@ -593,8 +612,33 @@ public class Controlador {
 	}
 	
 	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/postulacionesCam/")
+	public String postulacionesCampanias(Model model) {
+		model.addAttribute("postulaciones", new Postulacion());
+		return"ListaDePostulacionesCampanias";
+	}
 	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/postulacionesCampanias/")
+	public String listaPostulacionesCampanias(@RequestParam(value="idCampania")  Integer idcampania,Model model,@ModelAttribute("postulaciones")Postulacion postulacion) {
+		model.addAttribute("PostulacionesPorIdCampania", servicePostulaciones.buscarPorIdCampania(idcampania));
+		return "ListaDePostulacionesCampanias";
+				
+	}
 	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("postulacionesCampanias/aprobarPostulacion/{id}")
+	public String editarPostulacion(@PathVariable("id") int id,Model model) {
+		
+		Postulacion postulacion=servicePostulaciones.listarId(id);
+		
+		
+		model.addAttribute("postulaciones",postulacion);
+		
+		
+		return"FormularioAprobarPostulacion";
+	}
 	
 	
 	

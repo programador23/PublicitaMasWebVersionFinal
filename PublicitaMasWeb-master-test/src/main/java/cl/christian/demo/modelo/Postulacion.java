@@ -15,7 +15,7 @@ public class Postulacion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private int idCampania;
-	@Column(unique = true)
+
 	private String idusuario;
 	private String mensajePos;
 	private String mensajeIns;

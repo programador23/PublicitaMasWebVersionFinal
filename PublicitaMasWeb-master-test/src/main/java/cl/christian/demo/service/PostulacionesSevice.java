@@ -14,10 +14,14 @@ public class PostulacionesSevice implements IPostulacionesService{
 	@Autowired
 	private IPostulacionesRepository postulacionesRepo;
 	@Override
-	public void guardar(Postulacion postulacion) {
-		postulacionesRepo.save(postulacion);
+	public int guardar(Postulacion postulacion) {
+		int res=0;
+	 Postulacion p =postulacionesRepo.save(postulacion);
 		
-		
+		if(!p.equals(null)) {
+			
+		}
+		return 0;
 	}
 	@Override
 	public List<Postulacion> buscarPorIdusuario(String idusuario) {
@@ -28,6 +32,11 @@ public class PostulacionesSevice implements IPostulacionesService{
 	public List<Postulacion> buscarPorIdCampania(int idCampania) {
 		
 		return postulacionesRepo.findByIdCampania(idCampania);
+	}
+	@Override
+	public Postulacion listarId(int id) {
+		
+		return postulacionesRepo.findById(id).orElse(null);
 	}
 
 

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeLeaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Mis Postulaciones</title>
+<title>Postulaciones de la campania</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -26,16 +26,15 @@
 	<br>
 	
 	<div class="container mt-4">
-<!-- 	<form th:action="@{/postulacionUsuario}" th:object="${postulaciones}" method="get"> -->
-<!-- 		<input type="text" th:field="*{idusuario}" class="from-control col-md-4" /> -->
-<!-- 		<button type="submit" class="btn btn-warning">Buscar</button> -->
-<!-- 		</form> -->
+ 	<form th:action="@{/postulacionesCampanias/}" th:object="${postulaciones}" method="get"> 
+ 		<input type="text" th:field="*{idCampania}" class="from-control col-md-4" /> 
+		<button type="submit" class="btn btn-warning">Buscar</button> 		
+		</form> 
 		
 		<br>
 		<div class="card">
-		
 			<div class="card-body text-center">
-				<b>Mis Postulaciones de Campanias Agregadas </b>
+				<b>Postulaciones a la Campaña </b>
 			</div>
 		</div>
 		<br>
@@ -47,18 +46,23 @@
 						<th>ID</th>
 						<th>IDCAMPANIA</th>
 						<th>USUARIO</th>
-						<th>INSTRUCIONES</th>
+						<th>MENSAJE</th>
 						<th>ESTADO</th>
 				
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="postulaciones:${PostulacionPorUsuario}">
+					<tr th:each="postulaciones:${PostulacionesPorIdCampania}">
 						<td th:text="${postulaciones.id}"></td>
 						<td th:text="${postulaciones.idCampania}"></td>
 						<td th:text="${postulaciones.idusuario}"></td>
-						<td th:text="${postulaciones.mensajeIns}"></td>
+						<td th:text="${postulaciones.mensajePos}"></td>
 						<td th:text="${postulaciones.estado}"></td>
+						<td >
+						<a th:href="@{/perfil/}+${postulaciones.id}"Class="btn btn-primary">Ver Perfil</a>
+						</td>
+						<td><a th:href="@{aprobarPostulacion/}+${postulaciones.id}"Class="btn btn-success">Aprobar Postulacion</a>
+						</td>
 						
 				
 					</tr>

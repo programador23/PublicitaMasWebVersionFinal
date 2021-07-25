@@ -60,7 +60,10 @@
 						<td th:text="${campaniapublicitaria.detalle}"></td>
 						<td th:text="${campaniapublicitaria.image}"></td>
 						<td><a th:href="@{detalle/}+${campaniapublicitaria.id}"
-							Class="btn btn-success">Ver Detalle</a> <a
+							Class="btn btn-success">Ver Detalle</a> 
+							<a th:href="@{'/postulacionesCampanias/?idCampania='}+${campaniapublicitaria.id}"
+							Class="btn btn-success">Ver Detalle</a>
+							<a
 							th:href="@{/modificarcampania/}+${campaniapublicitaria.id}"
 							Class="btn btn-warning">Modificar</a> 
 							
