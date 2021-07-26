@@ -16,11 +16,12 @@ public class User {
 	private String password;
 	private int enabled;
 	
-	
 	private String nombre;
 	private String apellido;
 	private String correo;
 	private int celular;
+	
+	private String infopresentacion;
 	
 	
 	public int getIdusuario() {
@@ -71,12 +72,20 @@ public class User {
 	public void setCelular(int celular) {
 		this.celular = celular;
 	}
+	
+	public String getInfopresentacion() {
+		return infopresentacion;
+	}
+	public void setInfopresentacion(String infopresentacion) {
+		this.infopresentacion = infopresentacion;
+	}
 	@Override
 	public String toString() {
 		return "User [idusuario=" + idusuario + ", username=" + username + ", password=" + password + ", enabled="
 				+ enabled + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", celular="
-				+ celular + "]";
+				+ celular + ", infopresentacion=" + infopresentacion + "]";
 	}
+	
 
 	
 	

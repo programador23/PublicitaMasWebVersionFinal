@@ -12,5 +12,5 @@ public interface IPostulacionesService {
  
  public Postulacion listarId(int id);
  
- 
+ public void deletePostulacion(int id);
 }

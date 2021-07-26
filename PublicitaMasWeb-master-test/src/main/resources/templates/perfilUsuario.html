@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Bienvenido a Publicita+</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+  crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</head>
+<header th:replace="NavbarGeneral :: header"></header>
+
+<body>
+
+<div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
+     th:text="${mensaje}"
+     class="alert">
+</div>
+<br>
+
+<div class="card">
+  <div class="card-header">
+  Perfil de Usuario
+  </div>
+  
+  <div class="row g-3">
+  <br>
+  <div class="col-md-4">
+  <span>-</span>
+    <input type="text" class="form-control" th:value="${perfilUsuario.nombre}" placeholder="Nombre" aria-label="First name" disabled="disabled">
+    <br>
+    <input type="text" class="form-control" placeholder="Correo" th:value="${perfilUsuario.correo}" aria-label="First name" disabled="disabled">
+    <p>
+  </div>
+  <div class="col-md-4">
+  <span>-</span>
+    <input type="text" class="form-control" placeholder="Apellido" th:value="${perfilUsuario.apellido}" aria-label="Last name" disabled="disabled">
+    <br>
+    <input type="text" class="form-control" placeholder="Celular" th:value="${perfilUsuario.celular}" aria-label="First name" disabled="disabled">
+    <p>
+  </div>
+  <br>
+</div>
+
+
+<div class="card">
+  <div class="card-header">
+    Presentacion
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Informacion</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+  </div>
+</div>
+  
+ 
+ 		<div class="card">
+ 		<a th:href="@{'/redesSociales/?username='+ ${perfilUsuario.username}}">Mis Postulacion</a> <a th:href="@{/nuevaRedSocial}" class="btn btn-light">Agregar Nueva RedSocial</a>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>REDSOCIAL</th>
+						<th>USUARIO</th>
+						<th>URL</th>
+				
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="redessociales:${RedesSocialesPorUsername}">
+						<td th:text="${redessociales.id}"></td>
+						<td th:text="${redessociales.nombre}"></td>
+						<td th:text="${redessociales.usuario}"></td>
+						<td th:text="${redessociales.link}"></td>
+						<td><a th:href="${redessociales.link}"Class="btn btn-success" target="_blank">Visitar RedSocial</a>
+						</td>
+						
+				
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+ 
+ 
+  </div>
+
+
+
+
+
+
+</body>
+</html>

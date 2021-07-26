@@ -38,6 +38,11 @@ public class PostulacionesSevice implements IPostulacionesService{
 		
 		return postulacionesRepo.findById(id).orElse(null);
 	}
+	@Override
+	public void deletePostulacion(int id) {
+		postulacionesRepo.deleteById(id);
+		
+	}
 
 
 

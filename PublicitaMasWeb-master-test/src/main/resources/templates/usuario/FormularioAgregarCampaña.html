@@ -31,9 +31,8 @@
 								class="form-control" />
 						</div>
 							<div class="form-group">
-							<label  th:text="${#authentication.name}" ></label>
-							 <input    th:field="*{idusuario}" type="text" hidden=""
-								class="form-control" />
+						<label  th:text="${#authentication.name}" ></label>
+							 <input th:value="${#authentication.name}" th:id="idusuario" th:name="idusuario" type="text" hidden="" class="form-control"  />
 						</div>
 
 
@@ -69,7 +68,7 @@
 						
 						<br>
 						<input type="checkbox" name="condiciones" required/>
-						<label for="condiciones">Aceptar Terminos y <a href="pagina_condiciones.html">Condiciones</a> </label>
+						<label for="condiciones">Aceptar Terminos y <a href="https://drive.google.com/file/d/1_gI4XAzLrXEexfmxwsdELqPdYesrwsaW/view?usp=sharing" target="_blank">Condiciones</a> </label>
 
 					</div>
 					<div class="d-grid gap-2 btn-block">

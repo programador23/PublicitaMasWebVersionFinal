@@ -26,15 +26,12 @@
 	<br>
 	
 	<div class="container mt-4">
- 	<form th:action="@{/postulacionesCampanias/}" th:object="${postulaciones}" method="get"> 
- 		<input type="text" th:field="*{idCampania}" class="from-control col-md-4" /> 
-		<button type="submit" class="btn btn-warning">Buscar</button> 		
-		</form> 
+ 
 		
 		<br>
 		<div class="card">
 			<div class="card-body text-center">
-				<b>Postulaciones a la Campaña </b>
+				<b>Postulaciones a la Campania </b>
 			</div>
 		</div>
 		<br>
@@ -59,9 +56,12 @@
 						<td th:text="${postulaciones.mensajePos}"></td>
 						<td th:text="${postulaciones.estado}"></td>
 						<td >
-						<a th:href="@{/perfil/}+${postulaciones.id}"Class="btn btn-primary">Ver Perfil</a>
+						<a th:href="@{'/redesSociales/?username='+ ${postulaciones.idusuario}}"Class="btn btn-primary">Ver Perfil</a>
 						</td>
 						<td><a th:href="@{aprobarPostulacion/}+${postulaciones.id}"Class="btn btn-success">Aprobar Postulacion</a>
+						</td>
+						
+						<td><a th:href="@{/savePr/}+${postulaciones.id}"Class="btn btn-danger">Finalizar Postulacion</a>
 						</td>
 						
 				

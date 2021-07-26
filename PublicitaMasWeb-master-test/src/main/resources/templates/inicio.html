@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeLeaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Bienvenido a Publicita+</title>
@@ -14,11 +14,15 @@
 <header th:replace="NavbarGeneral :: header"></header>
 
 <body>
-
-<div class="alert alert-success alert-dismissable " th:if="${mensaje != null}"
-     th:text="${success}">
+<div class="container mt-4">
+<br>
+	<div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
+     th:text="${mensaje}"
+     class="alert">
 </div>
+		
 	<br>
+	
 <div class="card" >
 
 
@@ -49,6 +53,6 @@
     <a href="#" class="btn btn-warning">Conoce mas de Nosotros</a>
   </div>
 </div>
-
+</div>
 </body>
 </html>

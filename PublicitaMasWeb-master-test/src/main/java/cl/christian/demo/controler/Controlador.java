@@ -27,11 +27,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import cl.christian.demo.interfaceService.ICampaniaPublicitariaService;
 import cl.christian.demo.interfaceService.ICartelPublicitarioService;
 import cl.christian.demo.interfaceService.IPostulacionesService;
+import cl.christian.demo.interfaceService.IRedSocialService;
 import cl.christian.demo.interfaceService.IRolesService;
 import cl.christian.demo.interfaceService.IUsersService;
 import cl.christian.demo.modelo.CampaniaPublicitaria;
 import cl.christian.demo.modelo.CartelPublicitario;
 import cl.christian.demo.modelo.Postulacion;
+import cl.christian.demo.modelo.RedSocial;
 import cl.christian.demo.modelo.Roles;
 import cl.christian.demo.modelo.User;
 
@@ -84,8 +86,8 @@ public class Controlador {
 		model.addAttribute("titulo","Agregar  Campania-Empresa");
 		return "usuario/FormularioAgregarCampaña";
 	}
-	
-	
+
+		
 	
 	/**
 	 * @param c
@@ -433,7 +435,7 @@ public class Controlador {
         .addFlashAttribute("mensaje", "Modificado correctamente")
         .addFlashAttribute("clase", "success");
 		
-		return"carteles/FormularioAgregarCartel";
+		return"carteles/FormularioModificarCartel";
 	}
 
 	
@@ -449,6 +451,12 @@ public class Controlador {
 		return"redirect:/index";
 	}
 	
+	@GetMapping("/eliminarPostulacion/{id}")
+	public String deletePostulacion(@PathVariable int id,RedirectAttributes rediAttributes) {
+		servicePostulaciones.deletePostulacion(id);
+		rediAttributes.addFlashAttribute("mensaje", "Postulacion Eliminada correctamente");
+		return"redirect:/index";
+	}
 	
 	
 	
@@ -513,6 +521,10 @@ public class Controlador {
 		return"carteles/DetalleCartel";
 	}
 	
+
+	
+	
+	
 	@Autowired
 	private BCryptPasswordEncoder encoder;
 	
@@ -527,7 +539,7 @@ public class Controlador {
 	}
 	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@PostMapping("/saveUsuario")
-	public String Guardar(@ModelAttribute User user,Model model) {
+	public String Guardar(@ModelAttribute User user,Model model,RedirectAttributes attributes) {
 	String tmPass = user.getPassword();
 	String encriptado = encoder.encode(tmPass);
 	
@@ -544,7 +556,7 @@ public class Controlador {
 	
 	serviceRoles.guardar(roles);
 	
-	model.addAttribute("mensaje","Usuario Registrado Exitosamente "+ user.getUsername());
+	attributes.addFlashAttribute("mensaje","Usuario Registrado Exitosamente "+ user.getUsername());
 	
 		
 		return"redirect:/index";
@@ -562,16 +574,16 @@ public class Controlador {
 	
 	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@PostMapping("/guardarPostulacion/")
-	public String GuardarPostulacion(@ModelAttribute Postulacion postulacion, Model model) {
+	public String GuardarPostulacion(@ModelAttribute Postulacion postulacion, Model model,RedirectAttributes attributes) {
 		
 		try {
 			postulacion.setMensajeIns(null);
 			postulacion.setEstado("Postulacion Pendiente");
 			servicePostulaciones.guardar(postulacion);
-			model.addAttribute("mensaje","Postulacion Exitosa ");
+			attributes.addFlashAttribute("mensaje","Postulacion Exitosa ");
 		}catch (Exception e) {
-			model.addAttribute("mensaje", "Ya ");
-			model.addAttribute("mensaje","Ya Postulaste a esta Publicidad...");
+			
+			attributes.addFlashAttribute("mensaje","Ya Postulaste a esta Publicidad...");
 			return"redirect:/index";
 		}
 		
@@ -582,12 +594,12 @@ public class Controlador {
 	//guardar aprobacion de  postulacion
 	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@PostMapping("/guardarPostulacionAprobado")
-	public String GuardarPostulacionAprobado(@ModelAttribute Postulacion postulacion, Model model) {
+	public String GuardarPostulacionAprobado(@ModelAttribute Postulacion postulacion, Model model,RedirectAttributes attributes) {
 		
 			
 			postulacion.setEstado("Postulacion Aprobada");
 			servicePostulaciones.guardar(postulacion);
-			model.addAttribute("mensaje","Postulacion Aprobada ");
+			attributes.addFlashAttribute("mensaje","Postulacion Aprobada ");
 	
 		
 		
@@ -626,6 +638,40 @@ public class Controlador {
 		return "ListaDePostulacionesCampanias";
 				
 	}
+	@GetMapping("perfilUsuario/{username}")
+	public String perfilUsuario(@PathVariable("username") String username,Model model,RedirectAttributes attribute) {
+		
+		User user = null;
+		
+		user = serviceUsuario.listaPorUser(username);
+		
+		if(user==null) {
+			attribute.addFlashAttribute("error","El Usuario no existe");
+			return "/index";
+		}
+		 model.addAttribute("perfilUsuario", user);
+		 //model.addAttribute("redessociales", new RedSocial());
+		return"PerfilUsuario";
+	}
+	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/redesSociales/")
+	public String listaRedesSociales(@RequestParam(value="username")String username,Model model,@ModelAttribute("redessociales")RedSocial redSocial) {
+		User user=null;
+		user = serviceUsuario.listaPorUser(username);
+		
+		model.addAttribute("RedesSocialesPorUsername", redSocialService.listaPorRedSocial(username));
+		model.addAttribute("perfilUsuario", user);
+		return"perfilUsuario";
+		
+		
+	}
+	
+	public String redesSociales(Model model) {
+		model.addAttribute("redessociales", new RedSocial());
+		return "perfilUsuario";
+	}
+	
 	
 	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("postulacionesCampanias/aprobarPostulacion/{id}")
@@ -640,7 +686,42 @@ public class Controlador {
 		return"FormularioAprobarPostulacion";
 	}
 	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/savePr/{id}")
+	public String FinalizarPostulacion(@PathVariable("id") int id,Model model,RedirectAttributes attributes) {
+		
+		Postulacion postulacion=servicePostulaciones.listarId(id);
+		
+		postulacion.setEstado("Proceso finalizado");
+		
+		servicePostulaciones.guardar(postulacion);
+		
+		
+		attributes.addFlashAttribute("mensaje", "Proceso Finalizado");
+		return"redirect:/index";
+	}
 	
+	
+	
+	@Autowired
+	private IRedSocialService redSocialService;
+	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@PostMapping("/saveRedSocial")
+	public String GuardarRedSocial(@ModelAttribute RedSocial redSocial,Model model,RedirectAttributes attributes) {
+		redSocialService.guardar(redSocial);
+		attributes.addFlashAttribute("mensaje", "Red Social  Agregada");
+		
+		return"redirect:/index";
+	}
+	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/nuevaRedSocial")
+	public String agregaRedSocial(Model model) {
+		
+	model.addAttribute("redessociales", new RedSocial());
+	return"FormularioAgregarRedSocial";
+	}
 	
 	
 	@GetMapping("/index")
@@ -650,12 +731,6 @@ public class Controlador {
 		return "inicio";
 	}
 	
-	@GetMapping("/inicioUsuario")
-	//llama de inicio 
-	public String incioUsuario(Model model) {
-		
-		return "inicioUsuario";
-	}
 	
 	@GetMapping("/registro")
 	//llama de inicio 
@@ -664,5 +739,7 @@ public class Controlador {
 		return "registro";
 	}
 	
+	
+
 	
 }

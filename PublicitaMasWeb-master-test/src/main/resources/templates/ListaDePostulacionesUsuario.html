@@ -60,6 +60,8 @@
 						<td th:text="${postulaciones.mensajeIns}"></td>
 						<td th:text="${postulaciones.estado}"></td>
 						
+						<td><a th:href="eliminarcartel([[${postulaciones.id}]])"Class="btn btn-danger">Eliminar</a>
+						</td>
 				
 					</tr>
 				</tbody>
@@ -69,7 +71,39 @@
 
 	</div>
 
+	<script type="text/javascript">
+function eliminarcartel(id) {
+	swal({
+		  title: "Estas Seguro de Eliminar?",
+		  text: "Una vez eliminado, no podras recuperar los datos",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+		.then((OK) => {
+		  if (OK) {
+			  $.ajax({
+				 url:"/eliminarPostulacion/"+id,
+				 success: function(res) {
+					console.log(res);
+				}
+			  });
+		    swal("Poof... El archivo ha sido eliminado", {
+		      icon: "success",
+		    }).then((ok)=>{
+		    	if(ok){
+		    		location.reload();
+		    	}
+		    });
+		  } else {
+		    swal("Tu archivo esta seguro!");
+		  }
+		});
 	
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

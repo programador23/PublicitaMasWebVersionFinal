@@ -26,7 +26,7 @@
   </a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Perfil</a>
+    <a class="dropdown-item" th:href="@{'/redesSociales/?username='+ ${#authentication.name}}">Perfil</a>
     <a class="dropdown-item" th:href="@{'/cartelidusuario/?idusuario='+ ${#authentication.name}}">Mis Carteles</a>
       <a class="dropdown-item" th:href="@{'/idusuario/?idusuario='+ ${#authentication.name}}">Mis Campanias Publicitarias</a>
         <a class="dropdown-item" th:href="@{'/postulacionUsuario?idusuario='+ ${#authentication.name}}">Mis Postulacion</a>

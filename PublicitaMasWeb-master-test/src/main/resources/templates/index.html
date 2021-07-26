@@ -15,13 +15,13 @@
 
 <body>
 
+
+	<br>
+<div class="card" >
 <div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
      th:text="${mensaje}"
      class="alert">
 </div>
-
-	<br>
-<div class="card" >
   <div class="card-header">
     Empresa Publicita+
   </div>
