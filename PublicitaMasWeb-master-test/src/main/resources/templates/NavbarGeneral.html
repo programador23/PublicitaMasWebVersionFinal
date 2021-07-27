@@ -14,10 +14,19 @@
         <a class="nav-link" href="/listarPublicidad">Campanias Publicitarias</a>
 		  <a class="nav-link" href="/listacarteles">Carteles Publicitarios</a>
         
+        
+                <div>
+        -<a th:href="@{/new}" class="btn btn-sm btn-light " sec:authorize="isAuthenticated()">Publicar Campania</a> -
+        <a th:href="@{/agregarCartel}" class="btn btn-sm btn-light" sec:authorize="isAuthenticated()">Publicar Cartel</a> -
+         <a th:href="@{/listar}" class="btn btn-sm btn-light" sec:authorize="hasRole('ROLE_ADMIN')">Lista Campanias Admin</a> -
+          <a th:href="@{/listacartelesAdmin}" class="btn btn-sm btn-light" sec:authorize="hasRole('ROLE_ADMIN')">Lista Cartel Admin</a> 
+        </div> 
+        
+        
               <ul class="navbar-nav mr-auto">
         <li sec:authorize="!isAuthenticated()">      
-      <a class="btn btn-outline-secondary" th:href="@{/login}">Iniciar Sesion</a>
-      <a class="btn btn-outline-secondary" th:href="@{/create}">Registar</a>
+      <a class="btn btn-outline-secondary d-lg-inline-block my-2 my-md-0 ms-md-3" th:href="@{/login}">Iniciar Sesion</a>
+      <a class="btn btn-outline-secondary d-lg-inline-block my-2 my-md-0 ms-md-3" th:href="@{/create}">Registar</a>
       </li>
       
       <li class="dropdown" sec:authorize="isAuthenticated()">
@@ -39,12 +48,7 @@
 </li>
      </ul>
      
-             <div>
-        -<a th:href="@{/new}" class="btn btn-sm btn-light " sec:authorize="isAuthenticated()">Publicar Campania</a> -
-        <a th:href="@{/agregarCartel}" class="btn btn-sm btn-light" sec:authorize="isAuthenticated()">Publicar Cartel</a> -
-         <a th:href="@{/listar}" class="btn btn-sm btn-light" sec:authorize="hasRole('ROLE_ADMIN')">Lista Campanias Admin</a> -
-          <a th:href="@{/listacartelesAdmin}" class="btn btn-sm btn-light" sec:authorize="hasRole('ROLE_ADMIN')">Lista Cartel Admin</a> 
-        </div> 
+     
  
 
       </div>

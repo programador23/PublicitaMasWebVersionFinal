@@ -60,7 +60,7 @@
 						<td th:text="${postulaciones.mensajeIns}"></td>
 						<td th:text="${postulaciones.estado}"></td>
 						
-						<td><a th:href="eliminarcartel([[${postulaciones.id}]])"Class="btn btn-danger">Eliminar</a>
+						<td><a th:onclick="eliminar([[${postulaciones.id}]])"Class="btn btn-danger">Eliminar</a>
 						</td>
 				
 					</tr>
@@ -72,7 +72,7 @@
 	</div>
 
 	<script type="text/javascript">
-function eliminarcartel(id) {
+function eliminar(id) {
 	swal({
 		  title: "Estas Seguro de Eliminar?",
 		  text: "Una vez eliminado, no podras recuperar los datos",

@@ -454,7 +454,7 @@ public class Controlador {
 	@GetMapping("/eliminarPostulacion/{id}")
 	public String deletePostulacion(@PathVariable int id,RedirectAttributes rediAttributes) {
 		servicePostulaciones.deletePostulacion(id);
-		rediAttributes.addFlashAttribute("mensaje", "Postulacion Eliminada correctamente");
+		//rediAttributes.addFlashAttribute("mensaje", "Postulacion Eliminada correctamente");
 		return"redirect:/index";
 	}
 	
@@ -698,7 +698,7 @@ public class Controlador {
 		
 		
 		attributes.addFlashAttribute("mensaje", "Proceso Finalizado");
-		return"redirect:/index";
+		return"redirect:/pago";
 	}
 	
 	
@@ -730,6 +730,14 @@ public class Controlador {
 		
 		return "inicio";
 	}
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@GetMapping("/pago")
+	//llama a pago
+	public String pago(Model model) {
+		
+		return "pago";
+	}
+	
 	
 	
 	@GetMapping("/registro")

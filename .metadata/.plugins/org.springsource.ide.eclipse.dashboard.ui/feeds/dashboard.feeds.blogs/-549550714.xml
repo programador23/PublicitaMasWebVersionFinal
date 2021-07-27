@@ -5,7 +5,33 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-07-23T12:00:00Z</updated>
+  <updated>2021-07-27T07:00:00Z</updated>
+  <entry>
+    <title>This Week in Spring - July 27th, 2021</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/07/27/this-week-in-spring-july-27th-2021" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-07-27:4507</id>
+    <updated>2021-07-27T07:00:00Z</updated>
+    <content type="html">&lt;p&gt;Aloha, Spring fans, from the beautiful island of Oahu, Hawaii. How&amp;rsquo;re you doing? We&amp;rsquo;ve got a ton of stuff to look at so let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;In last week&amp;rsquo;s &lt;a href="https://spring.io/blog/2021/07/22/a-bootiful-podcast-industry-analyst-fascinating-person-strategist-and-storyteller-michael-cot"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talk to industry analyst, fascinating person, strategist, and storyteller Michael Coté&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I love this look at building a &lt;a href="https://blog.rabbitmq.com/posts/2021/07/rabbitmq-streams-first-application/"&gt;first application with RabbitMQ streams&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I loved this &lt;a href="https://twitter.com/dormaindrewitz/status/1419029387039580160?s=12"&gt;infographic by Dormain Drewitz on modernizing the mainframe&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/07/23/premiering-now-springone-tour-july-2021-do-or-do-not-there-is-no-try-in-production"&gt;Premiering Now: SpringOne Tour - July 2021: Do or Do Not, There is no try{} in Production&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/07/22/spring-boot-2-4-9-is-now-available"&gt;Spring Boot 2.4.9 is now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/07/22/spring-boot-2-5-3-is-now-available"&gt;Spring Boot 2.5.3 is now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/07/22/spring-boot-2-6-0-m1-is-now-available"&gt;Spring Boot 2.6.0-M1 is now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/javaguyua/status/1417958123034251264?s=12"&gt;Spring Data is a 10 years old today the 23rd of July 2021!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/07/20/this-week-in-spring-july-20th-2021"&gt;This Week in Spring - July 20th, 2021&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.wimdeblauwe.com/blog/2021/07/25/using-records-with-thymeleaf/"&gt;Using Java 16 records with Thymeleaf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1417894074833543174"&gt;Spring Cloud scales Spring Boot apps to billions of requests per day without the hassle of managing infrastructure. See it in action and hear how Swiss Re is acceleratin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/VMware/status/1419674308390031362"&gt;Register for @SpringOne today&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Premiering Now: SpringOne Tour - July 2021: Do or Do Not, There is no try{} in Production</title>
     <link rel="alternate" href="https://spring.io/blog/2021/07/23/premiering-now-springone-tour-july-2021-do-or-do-not-there-is-no-try-in-production" />
@@ -580,55 +606,6 @@ dependencies {&#xD;
   &lt;li&gt;&lt;a href="https://twitter.com/VMware/status/1412437133680332802"&gt;Register for @SpringOne today. https://t.co/2Imy31RPwz https://t.co/nVXiILvyOH http://bit.ly/SpringOne21TW VMwareTanzu SpringOne&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;This project - &lt;a href="https://github.com/mhewedy/spring-data-jpa-mongodb-expressions"&gt;mhewedy/spring-data-jpa-mongodb-expressions&lt;/a&gt; - adds MongoDB query expressions to Spring Data JPA. This&amp;rsquo;ll be a win for so many JavaScript clients that like to build queries using MongoDB expressions!&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Introducing Spring GraphQL</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/07/06/introducing-spring-graphql" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Rossen Stoyanchev</name>
-    </author>
-    <id>tag:spring.io,2021-07-06:4488</id>
-    <updated>2021-07-06T17:00:00Z</updated>
-    <content type="html">&lt;p&gt;Following the Spring GraphQL project &lt;a href="https://spring.io/blog/2021/07/06/hello-spring-graphql"&gt;announcement&lt;/a&gt; and the availability of a 1.0 milestone, this blog post aims to provide more details.&lt;/p&gt;&lt;h3&gt;&lt;a href="#introduction" class="anchor" name="introduction"&gt;&lt;/a&gt;Introduction&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re looking to get started, please head over to our &lt;a href="https://github.com/spring-projects/spring-graphql#documentation"&gt;reference documentation&lt;/a&gt; and read the &amp;ldquo;Boot Starter&amp;rdquo; section, or run the &lt;a href="https://github.com/spring-projects/spring-graphql/tree/main/samples"&gt;samples&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you don&amp;rsquo;t know much about GraphQL, there are plenty of good resources. You can start at &lt;a href="https://graphql.org/learn/"&gt;graphql.org/learn&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;GraphQL is &lt;a href="https://landscape.graphql.org/card-mode?category=graph-ql-adopter&amp;grouping=category"&gt;widely adopted&lt;/a&gt; and in &amp;ldquo;Early Majority&amp;rdquo; based on the InfoQ &lt;a href="https://www.infoq.com/articles/architecture-trends-2020/"&gt;Architecture Trends&lt;/a&gt; for 2020. It provides an alternative to REST APIs that is more focused on data, and provides a schema and a query language for clients to use. The appeal from a client perspective is clear in this State of JavaScript &lt;a href="https://2020.stateofjs.com/en-US/technologies/datalayer/"&gt;report&lt;/a&gt;. You can read &lt;a href="https://docs.github.com/en/graphql/overview/about-the-graphql-api"&gt;GitHub&amp;rsquo;s story&lt;/a&gt; on why it uses GraphQL.&lt;/p&gt;&lt;h3&gt;&lt;a href="#foundational-support" class="anchor" name="foundational-support"&gt;&lt;/a&gt;Foundational Support&lt;/h3&gt;
-&lt;p&gt;As Andy Marek wrote in the &lt;a href="https://spring.io/blog/2021/07/06/hello-spring-graphql"&gt;opening blog&lt;/a&gt;, Spring GraphQL was conceived as the successor of the &lt;a href="https://github.com/graphql-java/graphql-java-spring"&gt;GraphQL Java Spring&lt;/a&gt; project from the GraphQL Java team. This is why the initial focus of our collaboration was to match that functionality as well as integrate GraphQL Java and Spring in the best possible way. &lt;/p&gt;
-&lt;p&gt;To that end we created the following foundational support:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;HTTP handlers &amp;ndash; available for both Spring MVC and WebFlux, built on &lt;a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#webmvc-fn"&gt;WebMvc&lt;/a&gt; and &lt;a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux-fn"&gt;WebFlux&lt;/a&gt; functional endpoint APIs.&lt;/li&gt;
-  &lt;li&gt;WebSocket handlers &amp;ndash; following the &lt;a href="https://github.com/enisdenjo/graphql-ws/blob/master/PROTOCOL.md"&gt;protocol&lt;/a&gt; from &lt;a href="https://github.com/enisdenjo/graphql-ws"&gt;graphql-ws&lt;/a&gt; with support for GraphQL subscription streams.&lt;/li&gt;
-  &lt;li&gt;Web Interception &amp;ndash; ability to intercept every GraphQL request, inspect HTTP headers, and modify the GraphQL &lt;code&gt;ExecutionInput&lt;/code&gt; or &lt;code&gt;ExecutionResult&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Boot starter &amp;ndash; put it all together into a runnable application.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Beyond that we started looking at key aspects such as security, testing, and metrics.&lt;/p&gt;&lt;h3&gt;&lt;a href="#security" class="anchor" name="security"&gt;&lt;/a&gt;Security&lt;/h3&gt;
-&lt;p&gt;The URL for a GraphQL endpoint is easy to secure as usual. For more fine-grained security, applications can use Spring Security annotations on data retrieval methods. This requires Spring Security context to propagate to data retrieval methods, and while GraphQL Java is &lt;a href="https://www.graphql-java.com/blog/threads/"&gt;neutral to threads&lt;/a&gt;, components in the execution can themselves be asynchronous and cause a switch of threads.&lt;/p&gt;
-&lt;p&gt;This lead us to add support for context propagation from the Web framework level, through the GraphQL engine, and to data fetching components. This includes both &lt;code&gt;ThreadLocal&lt;/code&gt; context and Reactor &lt;code&gt;Context&lt;/code&gt; for Spring MVC and WebFlux applications respectively. After those features are in place, Spring Security works without the need for any further specialized integration.&lt;/p&gt;
-&lt;p&gt;The &lt;a href="https://github.com/spring-projects/spring-graphql/tree/main/samples/webmvc-http"&gt;webmvc-http&lt;/a&gt; and the &lt;a href="https://github.com/spring-projects/spring-graphql/tree/main/samples/webflux-security"&gt;webflux-security&lt;/a&gt; samples demonstrate the use of Spring Security.&lt;/p&gt;&lt;h3&gt;&lt;a href="#exception-handling" class="anchor" name="exception-handling"&gt;&lt;/a&gt;Exception Handling&lt;/h3&gt;
-&lt;p&gt;Spring GraphQL enables applications to create multiple, independent &lt;code&gt;GraphQlExceptionResolver&lt;/code&gt; components to resolve exceptions to GraphQL errors for inclusion in the GraphQL response. It also provides an &lt;code&gt;ErrorType&lt;/code&gt; type to use to classify errors with common categories such as &lt;code&gt;BAD_REQUEST&lt;/code&gt;, &lt;code&gt;UNAUTHORIZED&lt;/code&gt;, &lt;code&gt;FORBIDDEN&lt;/code&gt;, &lt;code&gt;NOT_FOUND&lt;/code&gt;, or &lt;code&gt;INTERNAL_ERROR&lt;/code&gt; by default.&lt;/p&gt;&lt;h3&gt;&lt;a href="#testing" class="anchor" name="testing"&gt;&lt;/a&gt;Testing&lt;/h3&gt;
-&lt;p&gt;You can test GraphQL requests using &lt;a href="https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html#webtestclient"&gt;WebTestClient&lt;/a&gt;, just send and receive JSON. However, GraphQL specific details make this approach more cumbersome than it should be.&lt;/p&gt;
-&lt;p&gt;This is why Spring GraphQL includes &lt;code&gt;WebGraphQlTester&lt;/code&gt; that defines a workflow for testing GraphQL requests. It provides the following benefits:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Verify GraphQL responses are 200 (OK).&lt;/li&gt;
-  &lt;li&gt;Verify no unexpected errors under the &amp;ldquo;errors&amp;rdquo; key in the response.&lt;/li&gt;
-  &lt;li&gt;Decode under the &amp;ldquo;data&amp;rdquo; key in the response.&lt;/li&gt;
-  &lt;li&gt;Use JsonPath to decode different parts of the response.&lt;/li&gt;
-  &lt;li&gt;Test subscriptions.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;All &lt;a href="https://github.com/spring-projects/spring-graphql/tree/main/samples"&gt;samples&lt;/a&gt; use the &lt;code&gt;GraphQlTester&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#metrics" class="anchor" name="metrics"&gt;&lt;/a&gt;Metrics&lt;/h3&gt;
-&lt;p&gt;When the starter &lt;code&gt;spring-boot-starter-actuator&lt;/code&gt; is present, metrics for GraphQL requests are collected, including request and &lt;code&gt;DataFetcher&lt;/code&gt;execution timers, and an error counter.&lt;/p&gt;&lt;h3&gt;&lt;a href="#querydsl-integration" class="anchor" name="querydsl-integration"&gt;&lt;/a&gt;Querydsl Integration&lt;/h3&gt;
-&lt;p&gt;Querydsl provides a flexible and typesafe approach to express query predicates. Spring GraphQL builds on the Spring Data &lt;a href="https://docs.spring.io/spring-data/commons/docs/current/reference/html/#core.extensions"&gt;Querydsl extension&lt;/a&gt; to make it easy to create a Querydsl backed &lt;code&gt;DataFetcher&lt;/code&gt;. It prepares a Querydsl &lt;code&gt;Predicate&lt;/code&gt; from GraphQL request parameters, and uses it to fetch data and that works for JPA, MongoDB, and LDAP.&lt;/p&gt;
-&lt;p&gt;The &lt;a href="https://github.com/spring-projects/spring-graphql/tree/main/samples/webmvc-http"&gt;webmvc-http&lt;/a&gt; sample uses Querydsl.&lt;/p&gt;&lt;h3&gt;&lt;a href="#schema-first-vs-object-first" class="anchor" name="schema-first-vs-object-first"&gt;&lt;/a&gt;Schema-First vs Object-First&lt;/h3&gt;
-&lt;p&gt;GraphQL provides a schema language that helps clients to create valid requests, enables the GraphiQL UI editor, promotes a common vocabulary across teams, and so on. It also brings up the age old schema vs object-first development dilemma.&lt;/p&gt;
-&lt;p&gt;Our take is that schema-first development should be preferred. It facilitates a conversation among people of technical and non-technical background, it helps with tooling, it makes it easier to track changes, and so on. There is also no one-for-one mapping between GraphQL schema and Java types.&lt;/p&gt;
-&lt;p&gt;That said there is room for code generation too, to get started, for clients to create queries, and so on. Frameworks like &lt;a href="https://netflix.github.io/dgs/generating-code-from-schema/"&gt;Netflix DGS&lt;/a&gt; have excellent support for this that can be used with Spring GraphQL.&lt;/p&gt;&lt;h3&gt;&lt;a href="#roadmap-and-feedback" class="anchor" name="roadmap-and-feedback"&gt;&lt;/a&gt;Roadmap and Feedback&lt;/h3&gt;
-&lt;p&gt;We intend to have a 2nd milestone before &lt;a href="https://springone.io/"&gt;SpringOne&lt;/a&gt;, September 2-3. We have a number of &lt;a href="https://github.com/spring-projects/spring-graphql/issues?q=is%3Aopen+is%3Aissue+milestone%3A1.0.0-M2"&gt;issues for M2&lt;/a&gt; in the queue already from early feedback, including support for a GraphQL client, BatchLoader registrations, file uploads, and more.&lt;/p&gt;
-&lt;p&gt;The milestone phase will continue until after Spring Boot 2.6 in November, at which point the Boot starter is scheduled to move into the Spring Boot repository, for inclusion in Boot 2.7.&lt;/p&gt;
-&lt;p&gt;We aim to have stable APIs and enter an RC phase late this year. To get there, we need your feedback. Please, give it a try, and create an issue, or comment under existing issues in our &lt;a href="https://github.com/spring-projects/spring-graphql/issues"&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#resources" class="anchor" name="resources"&gt;&lt;/a&gt;Resources&lt;/h3&gt;
-&lt;p&gt;For more details on Spring GraphQL features, please check the &lt;a href="https://github.com/spring-projects/spring-graphql#documentation"&gt;reference documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The GraphQL Java and Spring teams will present jointly at this year&amp;rsquo;s &lt;a href="https://springone.io"&gt;SpringOne&lt;/a&gt; conference, which is once again free and online for a second straight year. Please, register to attend our talk and to interact with speakers and attendees.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

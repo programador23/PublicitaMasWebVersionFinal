@@ -28,16 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/prueba","/guardarPostulacion/**","/saveUsuario","/create","/cartel","/eliminarcampania/**","/index","/listarPublicidad", "/listacarteles", "/detalle/**" ,"detallecartel/**", "/nombre/detalle/**","/listacarteles","/detallecartel/**","/recursos/**","/registro","/static/**").permitAll()
-//		.antMatchers("/listar","/nuevocartel","/agregarCartel","/inicioUsuario").hasAnyRole("USER")
-//		
-//		.antMatchers("/savecampania").hasAnyRole("USER")
-//		.antMatchers("modificarcampania/**").hasAnyRole("USER")
-//		.antMatchers("/new").hasAnyRole("USER")
-//		.antMatchers("/eliminarcampania/**").hasAnyRole("USER")
-//		.antMatchers("/savecartel").hasAnyRole("USER")
-//		//.antMatchers("/listacartelesusuario").hasRole("USER")
-//		.antMatchers("modificarcartel/**").hasAnyRole("USER")
-//		.antMatchers("/eliminarcartel/**").hasAnyRole("USER")
+
 		.anyRequest().authenticated()
 		.and()
 		.formLogin()
